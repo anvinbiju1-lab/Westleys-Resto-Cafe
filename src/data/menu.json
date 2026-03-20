@@ -1,0 +1,155 @@
+[
+  {
+    "category": "Burgers & Breads",
+    "items": [
+      {
+        "name": "Beef Club Burger",
+        "price": "₹350",
+        "description": "Signature item. Homestyle pumpkin seed buns — elegantly crafted, not sloppy.",
+        "signature": true
+      },
+      {
+        "name": "Chicken Club Burger",
+        "price": "₹320",
+        "description": "Classic house favorite with fresh toppings."
+      },
+      {
+        "name": "Pork Bacon Sandwich (Egg)",
+        "price": "₹300",
+        "description": "Served with fried egg, house sauce."
+      },
+      {
+        "name": "Pork Bacon Sandwich (Tomato)",
+        "price": "₹280",
+        "description": "Served with fresh tomato and mustard."
+      }
+    ]
+  },
+  {
+    "category": "Mains & Steaks",
+    "items": [
+      {
+        "name": "Tenderloin Beef Steak",
+        "price": "₹550",
+        "description": "Signature cut, perfectly seared. The crown jewel.",
+        "signature": true
+      },
+      {
+        "name": "Lemon Basil Fish Steak",
+        "price": "₹480",
+        "description": "Light, aromatic, continental."
+      },
+      {
+        "name": "Beef Stroganoff",
+        "price": "₹450",
+        "description": "Slow-cooked, creamy Russian classic."
+      },
+      {
+        "name": "Beef Lasagna",
+        "price": "₹420",
+        "description": "Hearty layered Italian comfort food."
+      },
+      {
+        "name": "Hawaiian Loco Moco",
+        "price": "₹380",
+        "description": "Rice bowl topped with meat and gravy — a Pacific classic."
+      }
+    ]
+  },
+  {
+    "category": "Pasta",
+    "items": [
+      {
+        "name": "Rigatoni Creamy Cheese Pasta",
+        "price": "₹380",
+        "description": "Light cream sauce with a pleasant toasted garlic aftertaste."
+      },
+      {
+        "name": "Handmade Creamy Gnocchi",
+        "price": "₹420",
+        "description": "Homemade gnocchi, generous chicken, rich cream sauce."
+      }
+    ]
+  },
+  {
+    "category": "Starters & Soups",
+    "items": [
+      {
+        "name": "Creamy Mushroom Soup",
+        "price": "₹220",
+        "description": "Rich, smooth, deep earthy flavor with a hint of garlic."
+      },
+      {
+        "name": "Dynamite Shrimps",
+        "price": "₹350",
+        "description": "Crispy shrimp tossed in spicy dynamite sauce."
+      },
+      {
+        "name": "Crispy Fried Chicken",
+        "price": "₹280",
+        "description": "House-seasoned golden fried chicken."
+      }
+    ]
+  },
+  {
+    "category": "Pizza",
+    "items": [
+      {
+        "name": "Dip Pan Pizza (7\")",
+        "price": "₹250",
+        "description": "Deep-pan style, personalizable."
+      },
+      {
+        "name": "Dip Pan Pizza (10\")",
+        "price": "₹450",
+        "description": "Deep-pan style, personalizable."
+      },
+      {
+        "name": "Chicken Grilled Pizza",
+        "price": "₹350",
+        "description": "Grilled chicken, house sauce, mozzarella."
+      }
+    ]
+  },
+  {
+    "category": "Desserts & Drinks",
+    "items": [
+      {
+        "name": "Biscottino Semifreddo",
+        "price": "₹280",
+        "description": "Standout Italian semifreddo dessert.",
+        "signature": true
+      },
+      {
+        "name": "Chicken Rosemary New York Cheesecake",
+        "price": "₹320",
+        "description": "Unique savory-sweet crossover."
+      },
+      {
+        "name": "Walnut Brownie",
+        "price": "₹220",
+        "description": "Highly praised — 'easily top 5 in Kochi.'"
+      },
+      {
+        "name": "Nutmeg Fizz",
+        "price": "₹180",
+        "description": "House signature sparkling drink."
+      },
+      {
+        "name": "Pineapple Honey Juice",
+        "price": "₹150",
+        "description": "Fresh pressed."
+      },
+      {
+        "name": "Summer Fizz",
+        "price": "₹160",
+        "description": "Cucumber and mint (non-carbonated, despite name)."
+      },
+      {
+        "name": "Set Menu",
+        "price": "₹900",
+        "description": "Soup + Pasta or Burger + Drink. (Often discounted to ₹450)"
+      }
+    ]
+  }
+]
