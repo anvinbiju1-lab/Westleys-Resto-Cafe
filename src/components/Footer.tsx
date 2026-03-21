@@ -61,7 +61,7 @@ export default function Footer() {
             </div>
             {/* Social */}
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300" style={{ background: "rgba(17,19,25,0.8)" }}>
+              <a href="https://www.instagram.com/westleysrestocafe?igsh=eGJwaXBveGhwMmk3" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300" style={{ background: "rgba(17,19,25,0.8)" }}>
                 <Instagram size={16} />
               </a>
               <a href="#" aria-label="Facebook" className="w-9 h-9 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300" style={{ background: "rgba(17,19,25,0.8)" }}>
