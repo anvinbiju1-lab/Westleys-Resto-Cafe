@@ -6,6 +6,7 @@ import { Menu, X, ChevronRight, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const NAV_LINKS = [
   { name: "Story", href: "#story" },
   { name: "Menu", href: "#menu" },
@@ -93,17 +94,7 @@ export default function Navbar() {
       >
         <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <Image
-              src="/logo.png"
-              alt="Westley's Restocafe"
-              width={140}
-              height={56}
-              className="object-contain transition-opacity group-hover:opacity-80"
-              style={{ mixBlendMode: "screen" }}
-              priority
-            />
-          </Link>
+          <div className="shrink-0 w-[120px]" />
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-6">
@@ -191,8 +182,7 @@ export default function Navbar() {
               style={{ background: "rgba(10, 12, 16, 0.98)", backdropFilter: "blur(24px)", borderLeft: "1px solid rgba(39,39,47,0.8)" }}
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-between p-6 border-b border-[#27272F]/60">
-                <Image src="/logo.png" alt="Westley's Restocafe" width={90} height={36} className="object-contain" />
+              <div className="flex items-center justify-end p-6 border-b border-[#27272F]/60">
                 <button
                   className="w-9 h-9 flex items-center justify-center rounded-full glass text-[#A29A8D] hover:text-[#F4ECE2] transition-colors"
                   onClick={() => setIsOpen(false)}

@@ -46,15 +46,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand */}
           <div className="flex flex-col gap-5 lg:col-span-1">
-            <Link href="/" className="flex items-center group">
-              <Image
-                src="/logo.png"
-                alt="Westley's Restocafe"
-                width={120}
-                height={48}
-                className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-              />
-            </Link>
             <p className="text-[#A29A8D] text-sm font-inter leading-relaxed">
               Modern Dining. Timeless Flavor. An intimate restaurant in the heart of Kochi — crafted for taste, built for comfort.
             </p>

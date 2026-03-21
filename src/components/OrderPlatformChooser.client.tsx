@@ -12,13 +12,13 @@ interface OrderPlatformChooserProps {
 const PLATFORMS = [
   {
     name: "Swiggy",
-    url: "https://www.swiggy.com/city/kochi/westleys-restocafe",
+    url: "https://www.swiggy.com/city/kochi/westleys-restocafe-palarivattom-rest59510",
     bg: "#FC8019",
     emoji: "🧡",
   },
   {
     name: "Zomato",
-    url: "https://www.zomato.com/kochi/westleys-restocafe-mamangalam",
+    url: "https://www.zomato.com/kochi/westleys-restocafe-palarivattom/order",
     bg: "#E23744",
     emoji: "❤️",
   },
