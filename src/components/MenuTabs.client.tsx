@@ -63,7 +63,7 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className="relative flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-montserrat font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden"
+              className="relative flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-montserrat font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden active:scale-95"
               style={isActive ? {
                 background: "linear-gradient(135deg, #D1A352 0%, #B8893A 100%)",
                 color: "#050608",
@@ -90,10 +90,10 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
               <motion.div
                 layout
                 key={`${activeTab}-${item.name}`}
-                initial={{ opacity: 0, y: 24, scale: 0.97 }}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                transition={{ duration: 0.35, delay: isInView ? i * 0.06 : 0, ease: "easeOut" }}
+                exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                transition={{ duration: 0.5, delay: isInView ? i * 0.08 : 0, ease: [0.25, 1, 0.5, 1] }}
                 onClick={() => setSelectedItem(item)}
                 className="group cursor-pointer relative flex flex-col gap-4 p-6 rounded-2xl border border-[#27272F] overflow-hidden"
                 style={{
@@ -163,10 +163,10 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
               className="fixed inset-0 bg-black/80 backdrop-blur-md z-[100] cursor-pointer"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.8, y: 40 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-lg z-[101] rounded-3xl p-8 md:p-10"
               style={{
                 background: "linear-gradient(135deg, #111319 0%, #151820 100%)",

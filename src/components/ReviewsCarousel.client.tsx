@@ -53,9 +53,9 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.95 }}
+      transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
       className="relative max-w-3xl mx-auto"
     >
       {/* Review card */}
@@ -89,7 +89,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.45, ease: "easeOut" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200, mass: 0.9 }}
               className="flex flex-col items-center gap-6"
             >
               <p className="font-playfair text-xl md:text-2xl font-bold text-[#F4ECE2] leading-[1.6] italic max-w-2xl">
@@ -130,7 +130,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
         <button
           onClick={prev}
           aria-label="Previous review"
-          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300"
+          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300 active:scale-90"
           style={{ background: "rgba(17,19,25,0.8)" }}
         >
           <ChevronLeft size={20} />
@@ -157,7 +157,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
         <button
           onClick={next}
           aria-label="Next review"
-          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300"
+          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300 active:scale-90"
           style={{ background: "rgba(17,19,25,0.8)" }}
         >
           <ChevronRight size={20} />

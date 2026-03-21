@@ -167,17 +167,17 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
             />
 
             {/* Drawer */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              initial={{ x: "100%", borderTopLeftRadius: "50%" }}
+              animate={{ x: 0, borderTopLeftRadius: "0%" }}
+              exit={{ x: "100%", borderTopLeftRadius: "50%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200, mass: 0.8 }}
               className="fixed top-0 right-0 bottom-0 w-[80vw] max-w-sm z-50 lg:hidden flex flex-col overflow-hidden"
               style={{ background: "rgba(10, 12, 16, 0.98)", backdropFilter: "blur(24px)", borderLeft: "1px solid rgba(39,39,47,0.8)" }}
             >
@@ -197,9 +197,9 @@ export default function Navbar() {
                   <motion.a
                     key={link.name}
                     href={link.href}
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.06 + 0.1, duration: 0.4, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08 + 0.15, duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                     onClick={(e) => scrollToSection(e, link.href)}
                     className="flex items-center justify-between px-4 py-4 rounded-xl text-[#A29A8D] hover:text-[#F4ECE2] hover:bg-white/5 transition-all group border border-transparent hover:border-[#27272F]"
                   >

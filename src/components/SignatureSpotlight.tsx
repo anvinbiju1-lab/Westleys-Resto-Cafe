@@ -70,9 +70,9 @@ export default function SignatureSpotlight() {
           {SIGNATURES.map((dish, i) => (
             <motion.div
               key={dish.id}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.7, delay: i * 0.15, ease: "easeOut" }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ duration: 0.8, delay: i * 0.2, ease: [0.25, 1, 0.5, 1] }}
               className="group relative rounded-3xl overflow-hidden border border-[#27272F] hover:border-[#D1A352]/30 transition-all duration-500"
               style={{
                 background: "linear-gradient(135deg, #111319 0%, #151820 100%)",
