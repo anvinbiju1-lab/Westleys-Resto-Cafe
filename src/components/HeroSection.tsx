@@ -83,13 +83,24 @@ export default function HeroSection() {
           animate="visible"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
+          <a
             href="#menu"
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.querySelector("#menu");
+              if (target) {
+                const offset = 80;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = target.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+              }
+            }}
             className="btn-amber px-8 py-4 text-sm rounded-full w-full sm:w-auto text-center"
-            style={{ color: "#050608" }}
+            style={{ color: "#050608", display: "block" }}
           >
             View Menu
-          </Link>
+          </a>
           <a
             href="tel:+916282418166"
             className="btn-glass px-8 py-4 text-sm rounded-full w-full sm:w-auto flex items-center justify-center gap-2"
