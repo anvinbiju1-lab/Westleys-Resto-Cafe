@@ -28,7 +28,7 @@ export default function MenuSection() {
           </p>
         </div>
 
-        <MenuTabs categories={menuData} />
+        <MenuTabs categories={menuData.categories} currency={menuData.currency} />
       </div>
     </section>
   );

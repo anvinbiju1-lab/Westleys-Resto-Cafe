@@ -1,155 +1,160 @@
-[
-  {
-    "category": "Burgers & Breads",
-    "items": [
-      {
-        "name": "Beef Club Burger",
-        "price": "₹350",
-        "description": "Signature item. Homestyle pumpkin seed buns — elegantly crafted, not sloppy.",
-        "signature": true
-      },
-      {
-        "name": "Chicken Club Burger",
-        "price": "₹320",
-        "description": "Classic house favorite with fresh toppings."
-      },
-      {
-        "name": "Pork Bacon Sandwich (Egg)",
-        "price": "₹300",
-        "description": "Served with fried egg, house sauce."
-      },
-      {
-        "name": "Pork Bacon Sandwich (Tomato)",
-        "price": "₹280",
-        "description": "Served with fresh tomato and mustard."
-      }
-    ]
-  },
-  {
-    "category": "Mains & Steaks",
-    "items": [
-      {
-        "name": "Tenderloin Beef Steak",
-        "price": "₹550",
-        "description": "Signature cut, perfectly seared. The crown jewel.",
-        "signature": true
-      },
-      {
-        "name": "Lemon Basil Fish Steak",
-        "price": "₹480",
-        "description": "Light, aromatic, continental."
-      },
-      {
-        "name": "Beef Stroganoff",
-        "price": "₹450",
-        "description": "Slow-cooked, creamy Russian classic."
-      },
-      {
-        "name": "Beef Lasagna",
-        "price": "₹420",
-        "description": "Hearty layered Italian comfort food."
-      },
-      {
-        "name": "Hawaiian Loco Moco",
-        "price": "₹380",
-        "description": "Rice bowl topped with meat and gravy — a Pacific classic."
-      }
-    ]
-  },
-  {
-    "category": "Pasta",
-    "items": [
-      {
-        "name": "Rigatoni Creamy Cheese Pasta",
-        "price": "₹380",
-        "description": "Light cream sauce with a pleasant toasted garlic aftertaste."
-      },
-      {
-        "name": "Handmade Creamy Gnocchi",
-        "price": "₹420",
-        "description": "Homemade gnocchi, generous chicken, rich cream sauce."
-      }
-    ]
-  },
-  {
-    "category": "Starters & Soups",
-    "items": [
-      {
-        "name": "Creamy Mushroom Soup",
-        "price": "₹220",
-        "description": "Rich, smooth, deep earthy flavor with a hint of garlic."
-      },
-      {
-        "name": "Dynamite Shrimps",
-        "price": "₹350",
-        "description": "Crispy shrimp tossed in spicy dynamite sauce."
-      },
-      {
-        "name": "Crispy Fried Chicken",
-        "price": "₹280",
-        "description": "House-seasoned golden fried chicken."
-      }
-    ]
-  },
-  {
-    "category": "Pizza",
-    "items": [
-      {
-        "name": "Dip Pan Pizza (7\")",
-        "price": "₹250",
-        "description": "Deep-pan style, personalizable."
-      },
-      {
-        "name": "Dip Pan Pizza (10\")",
-        "price": "₹450",
-        "description": "Deep-pan style, personalizable."
-      },
-      {
-        "name": "Chicken Grilled Pizza",
-        "price": "₹350",
-        "description": "Grilled chicken, house sauce, mozzarella."
-      }
-    ]
-  },
-  {
-    "category": "Desserts & Drinks",
-    "items": [
-      {
-        "name": "Biscottino Semifreddo",
-        "price": "₹280",
-        "description": "Standout Italian semifreddo dessert.",
-        "signature": true
-      },
-      {
-        "name": "Chicken Rosemary New York Cheesecake",
-        "price": "₹320",
-        "description": "Unique savory-sweet crossover."
-      },
-      {
-        "name": "Walnut Brownie",
-        "price": "₹220",
-        "description": "Highly praised — 'easily top 5 in Kochi.'"
-      },
-      {
-        "name": "Nutmeg Fizz",
-        "price": "₹180",
-        "description": "House signature sparkling drink."
-      },
-      {
-        "name": "Pineapple Honey Juice",
-        "price": "₹150",
-        "description": "Fresh pressed."
-      },
-      {
-        "name": "Summer Fizz",
-        "price": "₹160",
-        "description": "Cucumber and mint (non-carbonated, despite name)."
-      },
-      {
-        "name": "Set Menu",
-        "price": "₹900",
-        "description": "Soup + Pasta or Burger + Drink. (Often discounted to ₹450)"
-      }
-    ]
-  }
-]
+{
+  "restaurant": "Westley's Restocafe",
+  "currency": "₹",
+  "categories": [
+    {
+      "id": "soups-salads",
+      "name": "Soups & Salads",
+      "items": [
+        {"id": "roasted-butternut-squash-soup", "name": "Roasted Butternut Squash Soup", "description": "Roasted butternut squash infused with aromatic leeks and chicken stock", "price": 220},
+        {"id": "tender-chicken-noodle", "name": "Tender Chicken Noodle", "description": "Tender chicken and chicken stock", "price": 240},
+        {"id": "classic-greek-salad", "name": "Classic Greek Salad", "description": "Cucumbers, feta cheese, Roma tomatoes, olives", "price": 280},
+        {"id": "grilled-chicken-creamy", "name": "Grilled Chicken Creamy", "description": "Grilled chicken with creamy feta dressing", "price": 340}
+      ]
+    },
+    {
+      "id": "savory-bites",
+      "name": "Savory Bites",
+      "items": [
+        {"id": "savory-bites", "name": "Savory Bites", "description": "Crispy fried chicken bites served with house BBQ sauce", "price": 380},
+        {"id": "texas-style-bbq", "name": "Texas Style BBQ Wings", "description": "Crispy chicken wings tossed in Texas-style BBQ white sauce", "price": 380}
+      ]
+    },
+    {
+      "id": "crafted-pizzas",
+      "name": "Crafted Pizzas",
+      "items": [
+        {"id": "classic-margherita-6", "name": "Classic Margherita 6\"", "description": "Fresh basil and cheese with real mozzarella", "price": 330},
+        {"id": "mushroom-sauce-veg-6", "name": "Mushroom Sauce Veg 6\"", "description": "Mushroom sauce and fresh basil on a cheesy crust", "price": 330},
+        {"id": "bbq-chicken-10", "name": "BBQ Chicken 10\"", "description": "Fresh mushrooms and cheese with BBQ sauce", "price": 430},
+        {"id": "classic-pepperoni-6", "name": "Classic Pepperoni 6\"", "description": "Pizza pepperoni slices on a cheesy crust", "price": 380}
+      ]
+    },
+    {
+      "id": "artisan-pizzas",
+      "name": "Artisan Pizzas",
+      "items": [
+        {"id": "ripened-margharita", "name": "Ripened Margharita", "description": "Ripened margherita with fresh basil", "price": 440},
+        {"id": "tuscana-veg", "name": "Tuscana Veg", "description": "Tuscana veg with peppers, fresh mushrooms", "price": 540},
+        {"id": "provençale-veg-10", "name": "Provençale Veg 10\"", "description": "Grilled peppers, fresh onions", "price": 550}
+      ]
+    },
+    {
+      "id": "pasta-delights",
+      "name": "Pasta Delights",
+      "items": [
+        {"id": "alfredo-sauce-chicken", "name": "Alfredo Sauce with Chicken", "description": "Choice of Pasta / Homemade Gnocchi", "price": 380},
+        {"id": "parmesan-sauce-chicken", "name": "Parmesan Sauce with Chicken", "description": "Choice of Pasta / Homemade Gnocchi", "price": 380},
+        {"id": "pesto-genovese-chicken", "name": "Pesto Genovese with Chicken", "description": "Choice of Pasta / Homemade Gnocchi", "price": 380},
+        {"id": "parmosa-rosa", "name": "Parmosa Rosa Cajun Spiced", "description": "Chicken, shrimp with your choice of pasta", "price": 420},
+        {"id": "beef-pasta", "name": "Beef Pasta", "description": "Seasoned ground beef pasta", "price": 480}
+      ]
+    },
+    {
+      "id": "mains-courses",
+      "name": "Mains Courses",
+      "items": [
+        {"id": "classic-chicken-fricassee", "name": "Classic Chicken Fricassee", "description": "Served in a rich gravy", "price": 440},
+        {"id": "beef-stroganoff", "name": "Beef Stroganoff", "description": "Tender pieces of beef cooked in a creamy sauce", "price": 460},
+        {"id": "fish-chips", "name": "Fish and Chips", "description": "Pan coated southern fried fish", "price": 440},
+        {"id": "grilled-chicken-tossed", "name": "Grilled Chicken Tossed", "description": "Grilled chicken with southern fried rice", "price": 440},
+        {"id": "grilled-beef-tossed", "name": "Grilled Beef Tossed", "description": "Juicy pan seared tender steak strips", "price": 520},
+        {"id": "ghrc-crusted-fish", "name": "Ghrc Crusted Fish", "description": "Delicately crusted fish with fresh herbs", "price": 480}
+      ]
+    },
+    {
+      "id": "gourmet-burgers",
+      "name": "Gourmet Burgers",
+      "items": [
+        {"id": "cheese-burger-chicken", "name": "Cheese Burger / Chicken", "description": "Southern fried chicken in a toasted bun", "price": 350},
+        {"id": "juicy-lucy-veg", "name": "Juicy Lucy / Veg", "description": "Juicy burger patty, lettuce and pickles", "price": 380},
+        {"id": "swiss-burger-chicken", "name": "Swiss Burger / Chicken", "description": "Grilled chicken with melted swiss cheese", "price": 380},
+        {"id": "double-scarper", "name": "Double Scarper", "description": "American grilled burger, peppers", "price": 450},
+        {"id": "romano-veg", "name": "Romano Veg", "description": "Tuscan grilled vegetables and feta", "price": 350},
+        {"id": "classic-veg-creamy", "name": "Classic Veg Creamy", "description": "Hearty vegetable patty, lettuce, fresh veggies", "price": 380}
+      ]
+    },
+    {
+      "id": "crafted-sandwiches",
+      "name": "Crafted Sandwiches & Grilled-Mex Delights",
+      "items": [
+        {"id": "grilled-veggie", "name": "Grilled Veggie", "description": "Toasted grilled sandwich", "price": 340},
+        {"id": "non-veg-club", "name": "Non-Veg Club", "description": "Triple toasted with juicy chicken breast", "price": 420},
+        {"id": "tender-beef", "name": "Tender Beef", "description": "Tender beef steak, caramelized onions", "price": 430},
+        {"id": "grilled-tortilla", "name": "Grilled Tortilla", "description": "Chicken tortilla with peppers", "price": 450},
+        {"id": "veg-quesadilla", "name": "Veg Quesadilla", "description": "Spicy peppers, melted cheese", "price": 440}
+      ]
+    },
+    {
+      "id": "thirst-quenchers",
+      "name": "Thirst Quenchers",
+      "items": [
+        {"id": "citrus-mint-splash", "name": "Citrus Mint Splash", "description": "Fresh fruits", "price": 140},
+        {"id": "virgin-mojito", "name": "Virgin Mojito", "description": "Refreshing blend of mint, lime, and soda", "price": 150},
+        {"id": "citrus-burst", "name": "Citrus Burst", "description": "Refreshing splash of citrus fruits", "price": 160},
+        {"id": "passion-fruit-elixir", "name": "Passion Fruit Elixir", "description": "Passion fruit drink", "price": 160},
+        {"id": "sparkling-lemonade", "name": "Sparkling Lemonade", "description": "Sparkling lemon juice and orange essence", "price": 180},
+        {"id": "orange-fizz", "name": "Orange Fizz", "description": "Orange and sparkling mineral water", "price": 180}
+      ]
+    },
+    {
+      "id": "nutrient-rich-sips",
+      "name": "Nutrient-Rich Sips",
+      "items": [
+        {"id": "tropical-mango-bliss", "name": "Tropical Mango Bliss", "description": "Bananas, creamy yogurt, hint of honey", "price": 240},
+        {"id": "avocado-bliss", "name": "Avocado Bliss", "description": "Creamy texture of ripe avocados, bananas, blueberry burst, honey", "price": 280}
+      ]
+    },
+    {
+      "id": "hot-coffee",
+      "name": "Hot Coffee",
+      "items": [
+        {"id": "espresso", "name": "Espresso", "description": "Double shot espresso with milk", "price": 120},
+        {"id": "americano", "name": "Americano", "description": "Chilled Americano served over ice cubes", "price": 160},
+        {"id": "cappuccino-shaken", "name": "Cappuccino Shaken", "description": "Espresso shaken with a day of sweetness", "price": 240},
+        {"id": "chilled-americano", "name": "Chilled Americano", "description": "Chilled Americano", "price": 240},
+        {"id": "iced-latte", "name": "Iced Latte", "description": "Smooth mix of espresso and ice", "price": 240},
+        {"id": "iced-mocha", "name": "Iced Mocha", "description": "Iced mocha", "price": 240}
+      ]
+    },
+    {
+      "id": "green-tea",
+      "name": "Green Tea / Black Tea / Lemon Tea",
+      "items": [
+        {"id": "green-tea", "name": "Green Tea / Black Tea / Lemon Tea", "description": "Enjoy your choice of refreshing green, black, or lemon tea", "price": 90}
+      ]
+    },
+    {
+      "id": "cold-coffee",
+      "name": "Cold Coffee",
+      "items": [
+        {"id": "iced-americano", "name": "Iced Americano", "description": "Chilled Americano served over ice cubes", "price": 190},
+        {"id": "iced-latte", "name": "Iced Latte", "description": "Smooth mix of espresso and ice", "price": 220},
+        {"id": "iced-mocha", "name": "Iced Mocha", "description": "Iced mocha", "price": 240}
+      ]
+    },
+    {
+      "id": "frappe",
+      "name": "Frappe",
+      "items": [
+        {"id": "mocha-frappe", "name": "Mocha Frappe", "description": "Mocha frappe, chocolate", "price": 290},
+        {"id": "berry-frappe", "name": "Berry Frappe", "description": "Berry frappe", "price": 290},
+        {"id": "nutty-frappe", "name": "Nutty Frappe", "description": "Nutty frappe with a dash of honey", "price": 290}
+      ]
+    },
+    {
+      "id": "patisserie",
+      "name": "Patisserie",
+      "items": [
+        {"id": "classic-fudge-walnut", "name": "Classic Fudge Walnut Brownie", "description": "Classic fudge walnut brownie", "price": 140},
+        {"id": "vanilla-caramel", "name": "Vanilla Caramel", "description": "Vanilla caramel", "price": 160},
+        {"id": "tiramisu", "name": "Tiramisu", "description": "Topped with fresh mascarpone", "price": 160},
+        {"id": "scotch-caramel", "name": "Scotch Caramel", "description": "Scotch caramel", "price": 220},
+        {"id": "chocolate-truffle", "name": "Chocolate Truffle", "description": "Chocolate truffle with suede rich espresso", "price": 220},
+        {"id": "new-york-cheesecake", "name": "New York Cheesecake", "description": "New York cheesecake with cracker crust", "price": 280},
+        {"id": "blueberry-cheesecake", "name": "Blueberry Cheesecake", "description": "Blueberry cheesecake", "price": 280},
+        {"id": "brownie-cheesecake", "name": "Brownie Cheesecake", "description": "Brownie cheesecake", "price": 280}
+      ]
+    }
+  ]
+}

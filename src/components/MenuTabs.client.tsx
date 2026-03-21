@@ -7,49 +7,60 @@ import OrderPlatformChooser from "./OrderPlatformChooser.client";
 
 interface MenuItem {
   name: string;
-  price: string;
+  price: string | number;
   description: string;
   signature?: boolean;
 }
 
 interface MenuCategory {
-  category: string;
+  id: string;
+  name: string;
   items: MenuItem[];
 }
 
 interface MenuTabsProps {
   categories: MenuCategory[];
+  currency?: string;
 }
 
 const ICONS: Record<string, string> = {
-  "Burgers & Breads": "🍔",
-  "Mains & Steaks": "🥩",
-  "Pasta": "🍝",
-  "Starters & Soups": "🥣",
-  "Pizza": "🍕",
-  "Desserts & Drinks": "🍮",
+  "Soups & Salads": "🥗",
+  "Savory Bites": "🍗",
+  "Crafted Pizzas": "🍕",
+  "Artisan Pizzas": "🍕",
+  "Pasta Delights": "🍝",
+  "Mains Courses": "🥩",
+  "Gourmet Burgers": "🍔",
+  "Crafted Sandwiches & Grilled-Mex Delights": "🥪",
+  "Thirst Quenchers": "🍹",
+  "Nutrient-Rich Sips": "🥑",
+  "Hot Coffee": "☕",
+  "Green Tea / Black Tea / Lemon Tea": "🍵",
+  "Cold Coffee": "🧋",
+  "Frappe": "🥤",
+  "Patisserie": "🍰",
 };
 
-export default function MenuTabs({ categories }: MenuTabsProps) {
-  const [activeTab, setActiveTab] = useState(categories[0].category);
+export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps) {
+  const [activeTab, setActiveTab] = useState(categories[0].id);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isChooserOpen, setIsChooserOpen] = useState(false);
 
   const gridRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(gridRef, { once: true, margin: "-5%" });
 
-  const activeItems = categories.find(c => c.category === activeTab)?.items || [];
+  const activeItems = categories.find(c => c.id === activeTab)?.items || [];
 
   return (
     <div className="flex flex-col gap-10">
       {/* Pill Tabs */}
       <div className="flex items-center gap-2 md:gap-3 overflow-x-auto no-scrollbar pb-2">
         {categories.map((cat) => {
-          const isActive = activeTab === cat.category;
+          const isActive = activeTab === cat.id;
           return (
             <button
-              key={cat.category}
-              onClick={() => setActiveTab(cat.category)}
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
               className="relative flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-montserrat font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden"
               style={isActive ? {
                 background: "linear-gradient(135deg, #D1A352 0%, #B8893A 100%)",
@@ -62,8 +73,8 @@ export default function MenuTabs({ categories }: MenuTabsProps) {
                 border: "1px solid #27272F",
               }}
             >
-              <span className="text-sm" aria-hidden="true">{ICONS[cat.category] || "🍽"}</span>
-              <span>{cat.category}</span>
+              <span className="text-sm" aria-hidden="true">{ICONS[cat.name] || "🍽"}</span>
+              <span>{cat.name}</span>
             </button>
           );
         })}
@@ -116,7 +127,7 @@ export default function MenuTabs({ categories }: MenuTabsProps) {
                 </div>
 
                 {/* Price */}
-                <span className="font-playfair text-2xl font-bold text-[#D1A352]">{item.price}</span>
+                <span className="font-playfair text-2xl font-bold text-[#D1A352]">{currency}{item.price}</span>
 
                 {/* Description */}
                 <p className="text-[#A29A8D] text-sm font-inter leading-relaxed line-clamp-2 flex-grow">
@@ -182,7 +193,7 @@ export default function MenuTabs({ categories }: MenuTabsProps) {
                     {selectedItem.name}
                   </h2>
                   <span className="font-playfair text-2xl font-bold text-[#D1A352] flex-shrink-0">
-                    {selectedItem.price}
+                    {currency}{selectedItem.price}
                   </span>
                 </div>
 
