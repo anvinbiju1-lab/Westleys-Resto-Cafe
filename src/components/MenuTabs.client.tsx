@@ -24,20 +24,22 @@ interface MenuTabsProps {
 }
 
 const ICONS: Record<string, string> = {
-  "Soups & Salads": "🥗",
+  "Soups": "🥣",
+  "Salads": "🥗",
   "Savory Bites": "🍗",
+  "Pasta Delights": "🍝",
+  "Main Courses": "🥩",
+  "Gourmet Burgers": "🍔",
+  "Crafted Sandwiches & Tex-Mex Delights": "🌮",
   "Crafted Pizzas": "🍕",
   "Artisan Pizzas": "🍕",
-  "Pasta Delights": "🍝",
-  "Mains Courses": "🥩",
-  "Gourmet Burgers": "🍔",
-  "Crafted Sandwiches & Grilled-Mex Delights": "🥪",
   "Thirst Quenchers": "🍹",
-  "Nutrient-Rich Sips": "🥑",
+  "Smoothies / Nutrient-Rich Sips": "🥑",
+  "Milkshakes & Malts": "🥤",
   "Hot Coffee": "☕",
-  "Green Tea / Black Tea / Lemon Tea": "🍵",
+  "Tea": "🍵",
   "Cold Coffee": "🧋",
-  "Frappe": "🥤",
+  "Frappe": "🧊",
   "Patisserie": "🍰",
 };
 
