@@ -1,19 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Star, Clock, Phone, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import HeroBackground from "./HeroBackground.client";
 
 const easeOut = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] },
+    transition: { duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] as [number, number, number, number] },
   }),
 };
 
