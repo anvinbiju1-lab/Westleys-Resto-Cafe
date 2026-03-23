@@ -56,7 +56,7 @@ export default function HeroBackground() {
       {/* Background image with GSAP parallax */}
       <div ref={bgRef} className="absolute inset-0 scale-110">
         <Image
-          src="/hero-bg.png"
+          src="/hero_phone.jpeg"
           alt="Westley's Restocafe interior"
           fill
           className="object-cover object-center md:hidden"
