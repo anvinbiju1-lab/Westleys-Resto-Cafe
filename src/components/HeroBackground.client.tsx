@@ -26,7 +26,8 @@ export default function HeroBackground() {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced || !bgRef.current) return;
+    const isMobile = window.innerWidth < 768;
+    if (prefersReduced || !bgRef.current || isMobile) return;
 
     const ctx = gsap.context(() => {
       gsap.to(bgRef.current, {
@@ -53,13 +54,13 @@ export default function HeroBackground() {
 
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-      {/* Background image with GSAP parallax */}
-      <div ref={bgRef} className="absolute inset-0 scale-110">
+      {/* Background image with GSAP parallax (desktop only) */}
+      <div ref={bgRef} className="absolute inset-0 md:scale-110">
         <Image
           src="/hero_phone.jpeg"
           alt="Westley's Restocafe interior"
           fill
-          className="object-cover object-center md:hidden"
+          className="object-contain object-top md:hidden max-h-[85vh]"
           priority
           quality={90}
         />
