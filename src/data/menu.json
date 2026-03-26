@@ -39,7 +39,7 @@
         {"id": "pesto-genovese", "name": "Pesto Genovese with Chicken / Veg", "description": "A traditional Ligurian sauce with fresh garlic, Parmesan cheese, and fresh cream tossed with your choice of pasta.", "price": 390},
         {"id": "parma-rosa", "name": "Parma Rosa with Cajun Spiced Chicken / Shrimps", "description": "Delicious blend of creamy Alfredo and zesty marinara, tossed with your choice of pasta.", "price": 390},
         {"id": "bolognese-sauce", "name": "Bolognese Sauce", "description": "A rich, slow-cooked beef ragu, tomatoes, and aromatic herbs, served over your choice of pasta.", "price": 420},
-        {"id": "beef-lasagna", "name": "Beef Lasagna", "description": "Homemade layered pasta with seasoned beef ragu, rich tomato sauce, creamy béchamel, and melted cheese.", "price": 480},
+        {"id": "beef-lasagna", "name": "Beef Lasagna", "description": "Homemade layered pasta with seasoned beef ragu, rich tomato sauce, creamy béchamel, and melted cheese.", "price": 480, "signature": true},
         {"id": "beef-pastitsio", "name": "Beef Pastitsio", "description": "Baked pasta layered with seasoned ground beef, béchamel sauce, cream mash potato and melted cheese.", "price": 480},
         {"id": "spinach-mac-cheese", "name": "Spinach Mac and Cheese", "description": "Creamy macaroni in a rich cheese sauce, enhanced with fresh spinach for a delightful twist on a classic and baked to perfection.", "price": 380}
       ]
@@ -51,7 +51,7 @@
         {"id": "chicken-fricassee", "name": "Chicken Fricassee", "description": "Classic tender chicken stew slow-cooked in a rich creamy sauce with mushrooms and herbs, served along with saffron rice.", "price": 440},
         {"id": "beef-stroganoff", "name": "Beef Stroganoff", "description": "Tender pieces of beef cooked in a creamy sauce with mushrooms and onions, served with fragrant saffron rice.", "price": 460},
         {"id": "chicken-parmigiana", "name": "Chicken Parmigiana", "description": "Crispy breaded chicken breast topped with marinara sauce, melted mozzarella, and Parmesan cheese, served with a side of mesclun mix salad.", "price": 460},
-        {"id": "fish-and-chips", "name": "Fish and Chips", "description": "Tender fish fillet coated in golden breadcrumbs, fried to perfection, served with crispy fries, tartar sauce.", "price": 440},
+        {"id": "fish-and-chips", "name": "Fish and Chips", "description": "Tender fish fillet coated in golden breadcrumbs, fried to perfection, served with crispy fries, tartar sauce.", "price": 440, "signature": true},
         {"id": "southern-fried-chicken", "name": "Southern Fried Chicken", "description": "Crispy, golden-brown chicken, marinated in buttermilk and spices, fried to perfection for a tender and juicy bite, served along with homemade ranch dressing.", "price": 440},
         {"id": "grilled-tournado-steak", "name": "Grilled Tournado Steak 6 OZ", "description": "Juicy, pan-seared tenderloin pepper steak served with veg panache, garlic mash potato, and a rich, creamy peppercorn sauce.", "price": 520, "signature": true},
         {"id": "free-range-chicken", "name": "Free Range Chicken Breast", "description": "Juicy grilled chicken breast infused with thyme, served along with veg panache, garlic mash, and thyme au jus.", "price": 480},
@@ -68,7 +68,7 @@
         {"id": "juicy-lucy-burger", "name": "Juicy Lucy Burger Beef / Chicken", "description": "Juicy burger patty with molten cheese, crisp veggies, and cornichon on a toasted brioche bun.", "price": 380},
         {"id": "swiss-burger", "name": "Swiss Burger Beef / Chicken", "description": "Grilled burger patty topped with melted Swiss cheese, caramelized onions, mushrooms, and crisp veggies served on a toasted brioche bun.", "price": 380},
         {"id": "texan-beef-burger", "name": "Texan Beef Burger", "description": "Char-grilled beef patty, American cheese, BBQ sauce, caramelized onion, grilled pepperoni and crisp veggies on a toasted brioche bun.", "price": 440},
-        {"id": "sky-scrapper-burger", "name": "Sky Scrapper Beef Burger", "description": "Double beef patties, American cheese, pepperoni, cornichon, fresh veggies, and fried egg on a brioche bun.", "price": 560},
+        {"id": "sky-scrapper-burger", "name": "Sky Scrapper Beef Burger", "description": "Double beef patties, American cheese, pepperoni, cornichon, fresh veggies, and fried egg on a brioche bun.", "price": 560, "signature": true},
         {"id": "romano-veg-burger", "name": "Romano Veg Burger", "description": "Hearty vegetable patty, sliced cheese, grilled Tuscan veggies, and creamy pesto aioli on a toasted brioche bun.", "price": 320},
         {"id": "classic-veg-burger", "name": "Classic Veg Burger", "description": "Hearty vegetable patty, crisp lettuce, fresh veggies, and slice cheese on a toasted brioche bun.", "price": 260}
       ]
@@ -105,7 +105,7 @@
         {"id": "tuscan-veg-pizza-10", "name": "Tuscan Veg Pizza 10\"", "description": "With pimentos, fresh onions, fresh mushrooms, tomatoes, fresh courgette, melanzane, black olives, and cheeses made with real mozzarella, and provolone on a cheesy Parmesan crust.", "price": 540},
         {"id": "genovese-veg-pizza-10", "name": "Genovese Veg Pizza 10\"", "description": "A savory delight topped with fresh basil pesto, mushrooms, spinach, cherry tomatoes, and a blend of mozzarella and Parmesan cheese on a crisp, thin crust.", "price": 540},
         {"id": "grilled-chicken-pizza-10", "name": "Grilled Chicken Pizza 10\"", "description": "With grilled chicken breast, homemade marinara sauce, pimentos, fresh onions, olives, with provolone and mozzarella on a cheesy crust.", "price": 590},
-        {"id": "bbq-chicken-pizza-10", "name": "BBQ Chicken Pizza 10\"", "description": "With BBQ grilled chicken breast, fresh onions, fresh mushrooms, and cheeses made with 100% real mozzarella and provolone on a cheesy crust.", "price": 590},
+        {"id": "bbq-chicken-pizza-10", "name": "BBQ Chicken Pizza 10\"", "description": "With BBQ grilled chicken breast, fresh onions, fresh mushrooms, and cheeses made with 100% real mozzarella and provolone on a cheesy crust.", "price": 590, "signature": true},
         {"id": "pizza-pepperoni-10", "name": "Pizza Pepperoni 10\"", "description": "Classic pizza with a rich tomato sauce, melted mozzarella, and spicy pepperoni slices on a crispy, thin crust.", "price": 590}
       ]
     },
@@ -140,7 +140,7 @@
         {"id": "guava-grove", "name": "Guava Grove", "description": "A refreshing and tropical blend of ripe guava and creamy ice cream, finished with a touch of whipped cream.", "price": 260},
         {"id": "strawberry-serenade", "name": "Strawberry Serenade", "description": "Bursting with fresh strawberry flavor, this classic milkshake is sweet, fruity, and perfectly creamy.", "price": 260},
         {"id": "avocado-delight", "name": "Avocado Delight", "description": "Smooth and creamy, our avocado milkshake is rich in flavor and nutrients, a unique and delicious choice.", "price": 280},
-        {"id": "belgian-chocolate-delight", "name": "Belgian Chocolate Delight", "description": "Indulge in the rich, deep flavor of Belgian chocolate, perfectly balanced with creamy ice cream and a touch of whipped cream.", "price": 280},
+        {"id": "belgian-chocolate-delight", "name": "Belgian Chocolate Delight", "description": "Indulge in the rich, deep flavor of Belgian chocolate, perfectly balanced with creamy ice cream and a touch of whipped cream.", "price": 280, "signature": true},
         {"id": "peanut-butter-delight", "name": "Peanut Butter Delight", "description": "A creamy, nutty delight, our peanut butter milkshake is perfect for peanut butter lovers, with a smooth and satisfying taste.", "price": 280}
       ]
     },
@@ -176,7 +176,7 @@
         {"id": "chilled-bonbon", "name": "Chilled Café Bonbon", "description": "A delightful mix of rich espresso and sweet condensed milk, served over ice for a creamy, indulgent experience.", "price": 240},
         {"id": "iced-mocha", "name": "Iced Café Mocha", "description": "A luscious blend of espresso, chocolate, and milk, served over ice for a cool and decadent treat.", "price": 240},
         {"id": "iced-irish", "name": "Iced Café Irish", "description": "A smooth mix of espresso, Irish cream, and milk, served over ice for a refreshing and indulgent twist.", "price": 240},
-        {"id": "iced-noisette", "name": "Iced Café Noisette", "description": "A delightful combination of espresso and hazelnut cream, served over ice for a nutty and refreshing experience.", "price": 240}
+        {"id": "iced-noisette", "name": "Iced Café Noisette", "description": "A delightful combination of espresso and hazelnut cream, served over ice for a nutty and refreshing experience.", "price": 240, "signature": true}
       ]
     },
     {

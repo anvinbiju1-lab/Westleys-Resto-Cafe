@@ -43,14 +43,29 @@ export default function ContactSection() {
           style={{ background: "#1e2022" }}
         >
           <div className="relative w-full" style={{ height: "240px" }}>
+            {/* Working Open in Maps link */}
+            <a
+              href="https://maps.google.com/?q=Westley%27s+Restocafe,+Kaliyath+Building,+Mamangalam,+Kochi,+Kerala+682025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-3 left-3 z-10 flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded-full transition-all active:scale-95"
+              style={{
+                background: "rgba(18,19,22,0.85)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(240,191,107,0.3)",
+                color: "#f0bf6b",
+              }}
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>open_in_new</span>
+              Open in Maps
+            </a>
             <iframe
               title="Westley's Restocafe - Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.065738376905!2d76.30064751439706!3d9.994462092939892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d56d7fca2a9%3A0xb3ea9948f0c8d15f!2sWestley&#39;s%20Restocafe!5e0!3m2!1sen!2sin!4v1623456789012!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2394024577637!2d76.30133531462897!3d9.990059292879738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d09ec3ac40d%3A0x7e4db1b6abf69268!2sWestley&#39;s%20Restocafe!5e0!3m2!1sen!2sin!4v1711375200000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{
                 border: "none",
-                filter: "grayscale(1) brightness(0.5)",
                 position: "absolute",
                 inset: 0,
               }}
@@ -58,10 +73,10 @@ export default function ContactSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            {/* Gradient overlay */}
+            {/* Bottom gradient overlay */}
             <div
               className="absolute inset-0 pointer-events-none"
-              style={{ background: "linear-gradient(to top, #1e2022 0%, transparent 60%)" }}
+              style={{ background: "linear-gradient(to top, #1e2022 0%, transparent 50%)" }}
             />
             {/* Floating address card — Stitch glass style */}
             <div
@@ -119,7 +134,7 @@ export default function ContactSection() {
               style={{
                 background: "#292a2d",
                 height: "80px",
-                borderRadius: "0.375rem",
+                borderRadius: "9999px",
                 border: "1px solid rgba(79,69,56,0.1)",
               }}
             >
@@ -136,7 +151,7 @@ export default function ContactSection() {
               style={{
                 background: "#292a2d",
                 height: "80px",
-                borderRadius: "0.375rem",
+                borderRadius: "9999px",
                 border: "1px solid rgba(79,69,56,0.1)",
               }}
             >
@@ -200,7 +215,7 @@ export default function ContactSection() {
                 backdropFilter: "blur(12px)",
                 border: "1px solid rgba(240,191,107,0.2)",
                 color: "#f0bf6b",
-                borderRadius: "0.375rem",
+                borderRadius: "9999px",
                 boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
               }}
             >

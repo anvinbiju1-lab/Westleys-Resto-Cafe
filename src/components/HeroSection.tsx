@@ -109,7 +109,7 @@ export default function HeroSection() {
             href="#menu"
             onClick={(e) => { e.preventDefault(); scrollTo("#menu"); }}
             className="btn-primary w-full flex items-center justify-center gap-3 active:scale-[0.98]"
-            style={{ borderRadius: "0.375rem", minHeight: "56px" }}
+            style={{ borderRadius: "9999px", minHeight: "56px" }}
           >
             View Menu
             <UtensilsCrossed size={16} />
@@ -117,7 +117,7 @@ export default function HeroSection() {
           <a
             href="tel:+916282418166"
             className="btn-glass-secondary w-full flex items-center justify-center gap-3 active:scale-[0.98]"
-            style={{ borderRadius: "0.375rem" }}
+            style={{ borderRadius: "9999px" }}
           >
             Call Reserve
           </a>
