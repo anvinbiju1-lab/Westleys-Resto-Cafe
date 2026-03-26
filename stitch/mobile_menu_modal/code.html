@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Noto+Serif:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#1e1b15",
+              "on-primary": "#422c00",
+              "surface-container-lowest": "#0d0e11",
+              "surface-container-highest": "#343538",
+              "primary": "#f0bf6b",
+              "tertiary-container": "#b0aaa1",
+              "inverse-on-surface": "#2f3033",
+              "surface-bright": "#38393c",
+              "secondary-container": "#45464e",
+              "primary-container": "#d1a352",
+              "on-surface-variant": "#d2c4b2",
+              "primary-fixed": "#ffdeaa",
+              "surface-container-high": "#292a2d",
+              "background": "#121316",
+              "surface-tint": "#f0bf6b",
+              "tertiary-fixed": "#e9e1d7",
+              "tertiary": "#cdc5bc",
+              "on-secondary": "#2e3037",
+              "surface-container": "#1e2022",
+              "on-secondary-container": "#b4b4bd",
+              "secondary": "#c5c6ce",
+              "secondary-fixed": "#e2e2eb",
+              "inverse-primary": "#7c5809",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e3e2e5",
+              "on-error": "#690005",
+              "surface-container-low": "#1a1c1e",
+              "tertiary-fixed-dim": "#cdc5bc",
+              "on-primary-fixed": "#271900",
+              "on-secondary-fixed": "#191b22",
+              "on-secondary-fixed-variant": "#45464e",
+              "on-tertiary": "#343029",
+              "on-background": "#e3e2e5",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#f0bf6b",
+              "secondary-fixed-dim": "#c5c6ce",
+              "on-tertiary-fixed-variant": "#4a463f",
+              "surface-dim": "#121316",
+              "on-primary-fixed-variant": "#5f4100",
+              "outline-variant": "#4f4538",
+              "on-surface": "#e3e2e5",
+              "on-primary-container": "#553a00",
+              "outline": "#9b8f7f",
+              "surface": "#121316",
+              "surface-variant": "#343538",
+              "on-tertiary-container": "#433f38"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "serif": ["Playfair Display", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .backdrop-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.02;
+        pointer-events: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen overflow-hidden">
+<div class="fixed inset-0 backdrop-noise z-[60]"></div>
+<!-- Background Mock (Menu Screen) -->
+<main class="w-full min-h-screen blur-[2px] opacity-40 select-none pointer-events-none">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-stone-950/60 backdrop-blur-md">
+<span class="text-2xl font-serif text-amber-200 drop-shadow-[0_0_8px_rgba(209,163,82,0.4)] italic">Westley's</span>
+<span class="material-symbols-outlined text-amber-400">menu</span>
+</header>
+<section class="pt-24 px-8 space-y-12">
+<div>
+<h2 class="text-4xl font-serif text-primary italic mb-6">Signature Dishes</h2>
+<div class="space-y-8">
+<div class="bg-surface-container-low p-6 rounded-xl">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-serif text-on-surface">Smoked Truffle Risotto</h3>
+<span class="text-primary-fixed-dim font-label">₹850</span>
+</div>
+<p class="text-on-surface-variant text-sm">Arborio rice infused with hickory smoke and shaved black winter truffles.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[70] flex items-center justify-center p-4">
+<!-- Centered Card -->
+<article class="w-[390px] max-w-full bg-surface-container-low rounded-xl overflow-hidden shadow-[0_-4px_40px_rgba(0,0,0,0.8)] border-none relative">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 z-[80] w-10 h-10 flex items-center justify-center bg-stone-950/40 backdrop-blur-md rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<!-- Hero Image -->
+<div class="relative h-64 w-full">
+<img alt="Gourmet dish presentation" class="w-full h-full object-cover" data-alt="Exquisite plate of smoked truffle risotto with gold leaf garnish and aromatic steam in a dark moody restaurant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSFkrrdWQHYUVFaeZmSFpQCg1KSelWAFzMMawWR6apeToTOxifqSjP5zr7UUSQPSJi9QOiWPJ_XoxOjwcAnAO5rX2ZJpvW6gKmgUmdt_gkeiwT6Bvoy7Lmqry7pRRztCCHvfS8SAC-1jSAOWkuMNeUc5JNVMiT-MW6cFp2lanE7SRO4HeoXJKIBYHUkBcQCFW8hyk69XyKrW3-r31MTGKvhJfsfH1zEwHggXjF---paw1D06_wADvg8VOgU1ma6SRmdgqz64D5iD4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<!-- Content Container -->
+<div class="px-8 pb-10 -mt-8 relative z-10">
+<!-- Header -->
+<div class="space-y-1 mb-6">
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-primary-container font-semibold">Chef's Selection</span>
+<h1 class="text-4xl font-serif italic text-on-surface leading-tight">Smoked Truffle Risotto</h1>
+</div>
+<!-- Description -->
+<p class="text-on-surface-variant leading-relaxed text-sm mb-8">
+                    Indulge in our signature Arborio rice, slow-cooked in a rich porcini broth and cold-smoked with hickory wood. Finished with cultured butter, aged Parmigiano-Reggiano, and hand-shaved black winter truffles from the Perigord region.
+                </p>
+<!-- Price Breakdown Section -->
+<div class="bg-surface-container-highest/30 rounded-xl p-5 mb-8">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-label uppercase tracking-widest text-on-secondary-container">Base Price</span>
+<span class="text-on-surface font-medium">₹750.00</span>
+</div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-label uppercase tracking-widest text-on-secondary-container">Premium Truffles</span>
+<span class="text-on-surface font-medium">₹100.00</span>
+</div>
+<div class="h-[1px] bg-outline-variant/15 w-full mb-4"></div>
+<div class="flex justify-between items-center">
+<span class="text-sm font-label uppercase tracking-[0.1em] text-primary font-bold">Total Amount</span>
+<span class="text-2xl font-serif text-primary font-bold">₹850.00</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="space-y-4">
+<!-- Primary CTA -->
+<button class="w-full h-14 bg-gradient-to-r from-primary-container to-primary text-on-primary font-label font-bold uppercase tracking-widest rounded-md shadow-[0_4px_15px_rgba(209,163,82,0.3)] hover:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+                        Order Online
+                    </button>
+<!-- Third Party Delivery -->
+<div class="grid grid-cols-2 gap-4">
+<button class="h-12 bg-surface-variant/40 backdrop-blur-md rounded-md border border-primary/20 flex items-center justify-center gap-2 text-on-surface hover:bg-white/5 transition-colors">
+<span class="w-2 h-2 rounded-full bg-[#E23744]"></span>
+<span class="text-xs font-label uppercase tracking-wider">Zomato</span>
+</button>
+<button class="h-12 bg-surface-variant/40 backdrop-blur-md rounded-md border border-primary/20 flex items-center justify-center gap-2 text-on-surface hover:bg-white/5 transition-colors">
+<span class="w-2 h-2 rounded-full bg-[#FC8019]"></span>
+<span class="text-xs font-label uppercase tracking-wider">Swiggy</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Bottom Nav (Mock Context) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-stone-950/60 backdrop-blur-xl z-50 rounded-t-xl select-none pointer-events-none opacity-50">
+<div class="flex flex-col items-center justify-center text-stone-500">
+<span class="material-symbols-outlined">home</span>
+<span class="font-sans uppercase tracking-widest text-[10px] mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-amber-400 bg-amber-900/20 rounded-full px-4 py-1">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="font-sans uppercase tracking-widest text-[10px] mt-1">Menu</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-sans uppercase tracking-widest text-[10px] mt-1">Reserve</span>
+</div>
+</nav>
+</body></html>

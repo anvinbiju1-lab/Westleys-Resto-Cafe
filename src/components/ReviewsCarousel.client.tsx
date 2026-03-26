@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 interface Review {
   name: string;
@@ -15,17 +14,12 @@ interface ReviewsCarouselProps {
   reviews: Review[];
 }
 
-const SOURCE_COLORS: Record<string, string> = {
-  TripAdvisor: "rgba(52, 211, 153, 0.15)",
-  Zomato: "rgba(220, 80, 50, 0.15)",
-  Google: "rgba(66, 133, 244, 0.15)",
-};
-
 export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const touchStart = useRef(0);
 
   const next = useCallback(() => {
     setDirection(1);
@@ -45,123 +39,109 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
   }, [next]);
 
   const variants = {
-    enter: (dir: number) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
-    center: { x: 0, opacity: 1, zIndex: 1 },
-    exit: (dir: number) => ({ x: dir < 0 ? 80 : -80, opacity: 0, zIndex: 0 }),
+    enter: (dir: number) => ({ x: dir > 0 ? 60 : -60, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir < 0 ? 60 : -60, opacity: 0 }),
   };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.95 }}
-      transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-      className="relative max-w-3xl mx-auto"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
     >
-      {/* Review card */}
+      {/* Stitch-style glass card */}
       <div
-        className="relative rounded-3xl overflow-hidden p-10 md:p-14 min-h-[320px] flex flex-col justify-center"
+        className="relative rounded-xl p-8 sm:p-10 flex flex-col gap-8 shadow-2xl overflow-hidden"
+        onTouchStart={(e) => { touchStart.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          const diff = touchStart.current - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+        }}
         style={{
-          background: "linear-gradient(135deg, rgba(17,19,25,0.9) 0%, rgba(21,24,32,0.9) 100%)",
-          border: "1px solid rgba(209,163,82,0.15)",
-          boxShadow: "0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)",
-          backdropFilter: "blur(24px)",
+          background: "rgba(52, 53, 56, 0.4)",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(255, 255, 255, 0.06)",
         }}
       >
-        {/* Quote icon */}
-        <Quote
-          className="absolute top-8 left-8 text-[#D1A352]"
-          size={40}
-          strokeWidth={1}
-          style={{ opacity: 0.15 }}
-        />
+        {/* Grain texture inside card */}
+        <div className="absolute inset-0 bg-white/[0.02] pointer-events-none rounded-xl" />
 
-        {/* Inner glow */}
-        <div className="absolute inset-0 rounded-3xl pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at 50% 100%, rgba(209,163,82,0.06) 0%, transparent 60%)" }} />
+        {/* Big quote icon */}
+        <span
+          className="material-symbols-outlined self-start"
+          style={{
+            fontSize: "48px",
+            color: "rgba(240, 191, 107, 0.25)",
+            fontVariationSettings: "'FILL' 1",
+          }}
+        >
+          format_quote
+        </span>
 
-        <div className="relative z-10 flex flex-col items-center text-center gap-8">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={index}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ type: "spring", damping: 25, stiffness: 200, mass: 0.9 }}
-              className="flex flex-col items-center gap-6"
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={index}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ type: "spring", damping: 28, stiffness: 220, mass: 0.8 }}
+            className="flex flex-col gap-8"
+          >
+            {/* Review text — Playfair italic */}
+            <p
+              className="text-xl sm:text-2xl font-playfair italic leading-relaxed"
+              style={{ color: "#e3e2e5" }}
             >
-              <p className="font-playfair text-xl md:text-2xl font-bold text-[#F4ECE2] leading-[1.6] italic max-w-2xl">
-                &ldquo;{reviews[index].content}&rdquo;
-              </p>
+              &ldquo;{reviews[index].content}&rdquo;
+            </p>
 
-              <div className="flex flex-col items-center gap-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-px bg-[#D1A352]/40" />
-                  <span className="font-montserrat text-sm font-bold uppercase tracking-widest text-[#D1A352]">
-                    {reviews[index].name}
-                  </span>
-                  <div className="w-8 h-px bg-[#D1A352]/40" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="text-[10px] font-montserrat font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                    style={{
-                      background: SOURCE_COLORS[reviews[index].source] || "rgba(255,255,255,0.08)",
-                      color: "#A29A8D",
-                    }}
-                  >
-                    {reviews[index].source}
-                  </span>
-                  <span className="text-[#27272F]">·</span>
-                  <span className="text-[10px] font-montserrat text-[#A29A8D] uppercase tracking-widest">
-                    {reviews[index].type}
-                  </span>
-                </div>
+            {/* Reviewer — Stitch divider line style */}
+            <div
+              className="flex items-center gap-4 pt-6"
+              style={{ borderTop: "1px solid rgba(79,69,56,0.2)" }}
+            >
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+                style={{ background: "#292a2d", color: "#d1a352" }}
+              >
+                {reviews[index].name.charAt(0)}
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+              <div>
+                <h4 className="text-sm font-semibold" style={{ color: "#e3e2e5" }}>
+                  {reviews[index].name}
+                </h4>
+                <p
+                  className="text-[10px] uppercase tracking-widest mt-0.5"
+                  style={{ color: "rgba(240,191,107,0.6)" }}
+                >
+                  {reviews[index].source} · {reviews[index].type}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Controls */}
-      <div className="flex items-center justify-between mt-8 px-2">
-        <button
-          onClick={prev}
-          aria-label="Previous review"
-          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300 active:scale-90"
-          style={{ background: "rgba(17,19,25,0.8)" }}
-        >
-          <ChevronLeft size={20} />
-        </button>
-
-        {/* Dots */}
-        <div className="flex gap-2">
-          {reviews.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
-              aria-label={`Go to review ${i + 1}`}
-              className="transition-all duration-500 rounded-full"
-              style={{
-                width: i === index ? "28px" : "8px",
-                height: "8px",
-                background: i === index ? "linear-gradient(90deg, #D1A352, #B8893A)" : "#27272F",
-                boxShadow: i === index ? "0 0 10px rgba(209,163,82,0.4)" : "none",
-              }}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={next}
-          aria-label="Next review"
-          className="w-11 h-11 flex items-center justify-center rounded-full border border-[#27272F] text-[#A29A8D] hover:text-[#D1A352] hover:border-[#D1A352]/40 transition-all duration-300 active:scale-90"
-          style={{ background: "rgba(17,19,25,0.8)" }}
-        >
-          <ChevronRight size={20} />
-        </button>
+      {/* Dot indicators — Stitch amber glow style */}
+      <div className="flex justify-center items-center gap-3 mt-8">
+        {reviews.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setDirection(i > index ? 1 : -1); setIndex(i); }}
+            aria-label={`Review ${i + 1}`}
+            className="rounded-full transition-all duration-500"
+            style={{
+              width: i === index ? "8px" : "6px",
+              height: i === index ? "8px" : "6px",
+              background: i === index ? "#f0bf6b" : "#292a2d",
+              boxShadow: i === index ? "0 0 8px rgba(240,191,107,0.6)" : "none",
+            }}
+          />
+        ))}
       </div>
     </motion.div>
   );

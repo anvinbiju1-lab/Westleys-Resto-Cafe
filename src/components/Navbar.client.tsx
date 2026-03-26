@@ -81,20 +81,30 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: hidden ? -100 : 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "py-3 backdrop-blur-xl border-b border-white/5"
-            : "py-5 bg-transparent"
-        }`}
+        className="fixed top-0 left-0 w-full z-50 transition-all duration-500"
         style={{
           background: scrolled
-            ? "rgba(5, 6, 8, 0.85)"
-            : "linear-gradient(to bottom, rgba(5,6,8,0.8) 0%, transparent 100%)",
+            ? "rgba(11, 12, 15, 0.85)"
+            : "rgba(11, 12, 15, 0.6)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderBottom: scrolled ? "1px solid rgba(79,69,56,0.2)" : "none",
+          padding: scrolled ? "12px 0" : "16px 0",
         }}
       >
         <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">
-          {/* Logo */}
-          <div className="shrink-0 w-[120px]" />
+          {/* Amber italic logo — Stitch style */}
+          <div className="flex items-center gap-3">
+            <span
+              className="text-2xl font-playfair italic tracking-tight"
+              style={{
+                color: "#e5d4b1",
+                textShadow: "0 0 8px rgba(209,163,82,0.4)",
+              }}
+            >
+              {"Westley's"}
+            </span>
+          </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-6">

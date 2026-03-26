@@ -1,98 +1,213 @@
-import { MapPin, Phone } from "lucide-react";
-import ContactForm from "./ContactForm.client";
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { MapPin, Clock, Phone } from "lucide-react";
 
 export default function ContactSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-5%" });
+
   return (
-    <section id="contact" className="py-28 md:py-36 relative overflow-hidden" style={{ background: "var(--bg-secondary)" }}>
-      {/* Top gradient border */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent 0%, rgba(209,163,82,0.3) 50%, transparent 100%)" }} />
-
-      {/* Ambient glows */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full pointer-events-none -translate-y-1/2 -translate-x-1/2"
-        style={{ background: "radial-gradient(ellipse, rgba(65,37,43,0.15) 0%, transparent 70%)" }} aria-hidden="true" />
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full pointer-events-none translate-x-1/2"
-        style={{ background: "radial-gradient(ellipse, rgba(209,163,82,0.04) 0%, transparent 70%)" }} aria-hidden="true" />
-
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
-        {/* Header */}
-        <div className="mb-16">
-          <span className="section-label mb-4 block">Get In Touch</span>
-          <h2 className="font-playfair text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] tracking-[-0.02em] text-[#F4ECE2]">
-            Visit <span className="italic text-[#D1A352]">Westley&apos;s</span>
+    <section
+      id="contact"
+      ref={ref}
+      className="py-24 md:py-32 relative overflow-hidden"
+      style={{ background: "#1a1c1e" }}
+    >
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+        {/* Stitch editorial header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+          className="mb-10"
+        >
+          <h2
+            className="text-4xl sm:text-5xl font-playfair font-bold mb-2"
+            style={{ color: "#e3e2e5" }}
+          >
+            Visit Westley&apos;s
           </h2>
-        </div>
+          <p className="text-sm" style={{ color: "#d2c4b2" }}>
+            Experience the art of cinematic dining in the heart of Kochi.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16">
-          {/* Left — Info + Map */}
-          <div className="flex flex-col gap-8">
-            {/* Address card */}
-            <div className="rounded-2xl border border-[#27272F] p-6 flex flex-col gap-4"
-              style={{ background: "linear-gradient(135deg, #111319 0%, #151820 100%)", boxShadow: "0 4px 24px rgba(0,0,0,0.35)" }}>
-              <div className="flex gap-4">
-                <div className="w-11 h-11 flex items-center justify-center rounded-xl flex-shrink-0"
-                  style={{ background: "rgba(209,163,82,0.1)", border: "1px solid rgba(209,163,82,0.15)" }}>
-                  <MapPin size={20} className="text-[#D1A352]" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h4 className="font-montserrat text-xs font-bold uppercase tracking-wider text-[#F4ECE2]">Location</h4>
-                  <p className="text-[#A29A8D] text-sm font-inter leading-relaxed">
-                    Ground Floor, Kaliyath Building, Metro Pillar 481,<br />
-                    Palarivattom – Edappally Rd, Kochi, Kerala 682025
+        {/* Map Card — Stitch style */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+          className="mb-8 overflow-hidden rounded-xl"
+          style={{ background: "#1e2022" }}
+        >
+          <div className="relative w-full" style={{ height: "240px" }}>
+            <iframe
+              title="Westley's Restocafe - Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.065738376905!2d76.30064751439706!3d9.994462092939892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d56d7fca2a9%3A0xb3ea9948f0c8d15f!2sWestley&#39;s%20Restocafe!5e0!3m2!1sen!2sin!4v1623456789012!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{
+                border: "none",
+                filter: "grayscale(1) brightness(0.5)",
+                position: "absolute",
+                inset: 0,
+              }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            {/* Gradient overlay */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "linear-gradient(to top, #1e2022 0%, transparent 60%)" }}
+            />
+            {/* Floating address card — Stitch glass style */}
+            <div
+              className="absolute bottom-4 left-4 right-4 p-4 rounded-lg"
+              style={{
+                background: "rgba(52, 53, 56, 0.6)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(79,69,56,0.15)",
+              }}
+            >
+              <div className="flex items-start gap-3">
+                <MapPin size={18} style={{ color: "#f0bf6b", marginTop: "2px", flexShrink: 0 }} />
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest mb-1" style={{ color: "#f0bf6b" }}>
+                    Our Location
                   </p>
-                  <a
-                    href="https://maps.google.com/?q=Westley's+Restocafe+Edappally"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1 inline-flex items-center gap-1.5 text-[11px] font-montserrat font-bold uppercase tracking-widest text-[#D1A352] hover:text-[#F4ECE2] transition-colors border border-[#D1A352]/30 hover:border-[#D1A352]/60 rounded-full px-3 py-1.5 self-start"
-                  >
-                    Open in Google Maps ↗
-                  </a>
+                  <p className="text-sm font-medium leading-relaxed" style={{ color: "#e3e2e5" }}>
+                    Ground Floor, Kaliyath Building,<br />Metro Pillar 481, Mamangalam, Kochi
+                  </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Phone cards */}
-            <div className="rounded-2xl border border-[#27272F] p-6 flex flex-col gap-5"
-              style={{ background: "linear-gradient(135deg, #111319 0%, #151820 100%)", boxShadow: "0 4px 24px rgba(0,0,0,0.35)" }}>
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 flex items-center justify-center rounded-xl flex-shrink-0"
-                  style={{ background: "rgba(209,163,82,0.1)", border: "1px solid rgba(209,163,82,0.15)" }}>
-                  <Phone size={20} className="text-[#D1A352]" />
-                </div>
-                <h4 className="font-montserrat text-xs font-bold uppercase tracking-wider text-[#F4ECE2]">Reservations</h4>
-              </div>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="tel:+916282418166"
-                  className="btn-amber w-full text-xs rounded-xl text-center flex items-center justify-center gap-2 active:scale-95"
-                  style={{ color: "#050608", minHeight: "56px" }}
-                >
-                  <Phone size={14} /> +91 62824 18166
-                </a>
-                <a
-                  href="tel:+917356111146"
-                  className="btn-glass w-full text-xs rounded-xl text-center flex items-center justify-center gap-2 active:scale-95"
-                  style={{ minHeight: "56px" }}
-                >
-                  <Phone size={14} /> +91 73561 11146
-                </a>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="rounded-2xl border border-[#27272F] p-6"
-              style={{ background: "linear-gradient(135deg, #111319 0%, #151820 100%)" }}>
-              <h4 className="font-montserrat text-xs font-bold uppercase tracking-wider text-[#F4ECE2] mb-3">Hours</h4>
-              <div className="flex items-center justify-between">
-                <span className="text-[#A29A8D] text-sm font-inter">Monday – Sunday</span>
-                <span className="text-[#F4ECE2] text-sm font-inter font-medium">10:00 AM – 11:00 PM</span>
               </div>
             </div>
           </div>
+        </motion.section>
 
-          {/* Right — Contact form */}
-          <ContactForm />
-        </div>
+        {/* Direct Actions — Stitch style call buttons */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+          className="flex flex-col gap-4 mb-12"
+        >
+          <a
+            href="tel:+916282418166"
+            className="flex items-center justify-between px-6 transition-all active:scale-[0.98]"
+            style={{
+              background: "#f0bf6b",
+              color: "#422c00",
+              height: "56px",
+              borderRadius: "0.375rem",
+              fontWeight: 600,
+            }}
+          >
+            <span className="flex items-center gap-3">
+              <Phone size={18} />
+              <span>Call +91 62824 18166</span>
+            </span>
+            <span className="material-symbols-outlined" style={{ fontSize: "20px" }}>chevron_right</span>
+          </a>
+
+          <div className="grid grid-cols-2 gap-4">
+            {/* Hours tile */}
+            <div
+              className="flex flex-col items-center justify-center gap-1"
+              style={{
+                background: "#292a2d",
+                height: "80px",
+                borderRadius: "0.375rem",
+                border: "1px solid rgba(79,69,56,0.1)",
+              }}
+            >
+              <Clock size={20} style={{ color: "#f0bf6b" }} />
+              <span className="text-[10px] uppercase tracking-tighter" style={{ color: "#d2c4b2" }}>
+                10 AM – 11 PM Daily
+              </span>
+            </div>
+
+            {/* Second phone */}
+            <a
+              href="tel:+917356111146"
+              className="flex flex-col items-center justify-center gap-1 transition-colors active:scale-[0.98]"
+              style={{
+                background: "#292a2d",
+                height: "80px",
+                borderRadius: "0.375rem",
+                border: "1px solid rgba(79,69,56,0.1)",
+              }}
+            >
+              <Phone size={20} style={{ color: "#f0bf6b" }} />
+              <span className="text-[10px] uppercase tracking-tighter" style={{ color: "#d2c4b2" }}>
+                +91 73561 11146
+              </span>
+            </a>
+          </div>
+        </motion.section>
+
+        {/* Enquiry Form — Stitch underline-only inputs */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
+          className="relative p-8 rounded-xl"
+          style={{
+            background: "#1e2022",
+            border: "1px solid rgba(79,69,56,0.1)",
+          }}
+        >
+          {/* Floating Enquiry badge */}
+          <div
+            className="absolute -top-4 left-8 px-4 py-1 text-[10px] font-label font-bold uppercase tracking-widest rounded-full"
+            style={{ background: "#f0bf6b", color: "#422c00" }}
+          >
+            Enquiry
+          </div>
+          <form
+            className="mt-4 space-y-8"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            {[
+              { id: "name", label: "Name", type: "text" },
+              { id: "phone", label: "Phone", type: "tel" },
+              { id: "message", label: "Message", type: "text" },
+            ].map(({ id, label, type }) => (
+              <div key={id} className="relative">
+                <input
+                  id={id}
+                  type={type}
+                  placeholder=" "
+                  className="input-underline peer"
+                />
+                <label
+                  htmlFor={id}
+                  className="absolute top-3 left-0 text-xs font-label uppercase tracking-widest transition-all duration-300 pointer-events-none"
+                  style={{ color: "#6b6d70", zIndex: 0 }}
+                >
+                  {label}
+                </label>
+              </div>
+            ))}
+
+            <button
+              type="submit"
+              className="w-full py-4 font-label font-semibold uppercase tracking-widest text-sm transition-all duration-300 active:scale-[0.98]"
+              style={{
+                background: "rgba(52,53,56,0.4)",
+                backdropFilter: "blur(12px)",
+                border: "1px solid rgba(240,191,107,0.2)",
+                color: "#f0bf6b",
+                borderRadius: "0.375rem",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+              }}
+            >
+              Send Enquiry
+            </button>
+          </form>
+        </motion.section>
       </div>
     </section>
   );

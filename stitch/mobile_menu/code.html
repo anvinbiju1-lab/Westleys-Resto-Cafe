@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#1e1b15",
+            "on-primary": "#422c00",
+            "surface-container-lowest": "#0d0e11",
+            "surface-container-highest": "#343538",
+            "primary": "#f0bf6b",
+            "tertiary-container": "#b0aaa1",
+            "inverse-on-surface": "#2f3033",
+            "surface-bright": "#38393c",
+            "secondary-container": "#45464e",
+            "primary-container": "#d1a352",
+            "on-surface-variant": "#d2c4b2",
+            "primary-fixed": "#ffdeaa",
+            "surface-container-high": "#292a2d",
+            "background": "#121316",
+            "surface-tint": "#f0bf6b",
+            "tertiary-fixed": "#e9e1d7",
+            "tertiary": "#cdc5bc",
+            "on-secondary": "#2e3037",
+            "surface-container": "#1e2022",
+            "on-secondary-container": "#b4b4bd",
+            "secondary": "#c5c6ce",
+            "secondary-fixed": "#e2e2eb",
+            "inverse-primary": "#7c5809",
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "inverse-surface": "#e3e2e5",
+            "on-error": "#690005",
+            "surface-container-low": "#1a1c1e",
+            "tertiary-fixed-dim": "#cdc5bc",
+            "on-primary-fixed": "#271900",
+            "on-secondary-fixed": "#191b22",
+            "on-secondary-fixed-variant": "#45464e",
+            "on-tertiary": "#343029",
+            "on-background": "#e3e2e5",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#f0bf6b",
+            "secondary-fixed-dim": "#c5c6ce",
+            "on-tertiary-fixed-variant": "#4a463f",
+            "surface-dim": "#121316",
+            "on-primary-fixed-variant": "#5f4100",
+            "outline-variant": "#4f4538",
+            "on-surface": "#e3e2e5",
+            "on-primary-container": "#553a00",
+            "outline": "#9b8f7f",
+            "surface": "#121316",
+            "surface-variant": "#343538",
+            "on-tertiary-container": "#433f38"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Inter"],
+            "label": ["Inter"],
+            "serif": ["Playfair Display"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.no-scrollbar::-webkit-scrollbar {
+    display: none
+    }
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCxq6HpcRDCycRdQo9W6ohwG0md2SsmqSe5gbCK9_3EGfi4cvm0qLCc1W2LnJt9KhQLoe1XzHlB45rRFQ9cmO4Q-CT02SyaexnkpZrdR21_BB7zUuKNNBdTt3Ja-ZZf7d_5x6VjOGD_KXpJRbLt8TkLh2t58tZAn74qrrf1qEisC4CiqzdlPfoIZPdxw3h6sDkmjU9Qf6RpK6Y20YxFE4_A_GVSxgpe31UODrqHbQPr53KTInRaYUVQnBvMSQf3zXMpP87HO3AJvfY);
+    opacity: 0.02;
+    pointer-events: none
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface font-body min-h-screen selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- Shared TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-md bg-gradient-to-b from-stone-900/50 to-transparent flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-400">menu</span>
+</div>
+<h1 class="text-2xl font-serif text-amber-200 drop-shadow-[0_0_8px_rgba(209,163,82,0.4)] italic tracking-tight">Westley's</h1>
+<span class="material-symbols-outlined text-amber-400">fiber_manual_record</span>
+</header>
+<main class="pt-24 pb-32 px-4 max-w-[390px] mx-auto">
+<!-- Hero Header -->
+<section class="mb-10">
+<h2 class="text-4xl font-serif font-bold text-on-surface mb-2 tracking-tight">The Digital Menu</h2>
+<div class="w-12 h-1 bg-primary-container rounded-full"></div>
+</section>
+<!-- Category Tabs - Horizontal Scroll -->
+<nav class="sticky top-20 z-40 -mx-4 mb-8 bg-surface-dim/80 backdrop-blur-md py-2">
+<div class="flex overflow-x-auto no-scrollbar px-4 gap-3 items-center h-11">
+<!-- Active Tab -->
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-primary-container text-on-primary-container font-label text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(209,163,82,0.3)] border border-primary/20">
+          Burgers
+        </button>
+<!-- Inactive Tabs -->
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Mains
+        </button>
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Pasta
+        </button>
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Starters
+        </button>
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Pizza
+        </button>
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Desserts
+        </button>
+<button class="flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant font-label text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors">
+          Drinks
+        </button>
+</div>
+</nav>
+<!-- Menu Items List -->
+<div class="flex flex-col gap-6">
+<!-- Item Card 1 -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-highest/60 backdrop-blur-xl border border-white/10 p-5 transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex-1 pr-4">
+<h3 class="text-xl font-bold font-body text-on-surface leading-tight">The Westley Signature</h3>
+<span class="text-xs font-label uppercase tracking-widest text-primary-fixed-dim mt-1 block">Chef's Choice</span>
+</div>
+<div class="text-2xl font-serif font-bold text-primary italic">₹850</div>
+</div>
+<div class="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Signature Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="gourmet wagyu beef burger with melted aged cheddar, caramelized onions, and truffle aioli on a toasted brioche bun, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnqo8dZg3yL6vuTvtso8IFp912oUwVfjJJ_yVsxkfMUEg25ALGumaxuVN8Xm1hY48xSV0Du5TZl-7oOCDLNEygK67mXdLYDeFbuAFclJC60E6titVtyPvJmvYxJYBQDPM2dE3h2pSDHRAKqoEMsYjcwxurJI6yk_a2PYfb_JFmXB58x-lk0_OJtaUe1GV8rJNkqRge7tlAGtJ8POBdYXr0pJt83H7hjNfS3f-GZZFuckcZFpIhQCMINgAY6z04DVA2DLrkWQvgRNY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent"></div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">
+          Double Wagyu beef patty, aged cheddar, truffle-infused caramelized onions, and our secret Westley reduction. Served on a brioche bun.
+        </p>
+<button class="w-full h-11 flex items-center justify-center border border-primary/40 rounded-lg font-label text-sm font-bold text-primary hover:bg-primary/10 transition-colors uppercase tracking-widest">
+          Details
+        </button>
+</article>
+<!-- Item Card 2 -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-highest/60 backdrop-blur-xl border border-white/10 p-5 transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex-1 pr-4">
+<h3 class="text-xl font-bold font-body text-on-surface leading-tight">Umami Truffle Burger</h3>
+</div>
+<div class="text-2xl font-serif font-bold text-primary italic">₹720</div>
+</div>
+<div class="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Umami Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="thick juicy burger with portobello mushrooms, swiss cheese, and balsamic glaze, dark moody restaurant background with soft glows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1pFyUfTwqG2dIcgzg3OzX4omUDGLw5eWcVBXLFDusXSH-WLyZUPIY_9cap0Z_4oGhPNVILW0aD7PunifvNznp9JGMsScrEJERAvn5D_91p6dpvqjw432WcKNMe6a4xNCipAdrrdszqFKSLTTDzPCDv6YlrcpTBkO21DhhBNrbp3sZHcCjwZ_F9iSdMYsHWA4HdWh-d0e0NvBy00FDNqaIjrqqDCgm4_LcwYFq4juckwFN7EhBDGmpIvsakUMyEhG9oTiioFyCV5o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent"></div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">
+          Roasted portobello mushrooms, Swiss Gruyère, and a rich black truffle mayo. A vegetarian masterpiece for burger lovers.
+        </p>
+<button class="w-full h-11 flex items-center justify-center border border-primary/40 rounded-lg font-label text-sm font-bold text-primary hover:bg-primary/10 transition-colors uppercase tracking-widest">
+          Details
+        </button>
+</article>
+<!-- Item Card 3 -->
+<article class="group relative overflow-hidden rounded-xl bg-surface-container-highest/60 backdrop-blur-xl border border-white/10 p-5 transition-transform duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-4">
+<div class="flex-1 pr-4">
+<h3 class="text-xl font-bold font-body text-on-surface leading-tight">Spicy Southern Crunch</h3>
+</div>
+<div class="text-2xl font-serif font-bold text-primary italic">₹650</div>
+</div>
+<div class="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Chicken Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="crispy fried chicken burger with spicy slaw and pickles, bright textures on a dark platter, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyVmVyiw9vMuZS583tATPkI_nYUALb1Ghj-qO9FDunokFP0PiRZBg02dbOkgbc1DUAp0ovdgM3AzGgC3gmEOcKW67eyFS4VLf34tXQHGmzWodd2lgoTUggLPYkkvh7Wi-Kb2ynVSmfzcasf_KSlyIGOYkOZkSsxxMAk4un8n0S8lGwkC1feDd5LLQvpQkHuLuN5YMRDqcJkuxdhqIsWE9oiYeMKfXu7JaBz9sjSrUPpV6EQMiR8BSoQPgkTOY-dnmILSI26rCQmh8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent"></div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">
+          Buttermilk brined crispy chicken breast, habanero slaw, and house-made bread &amp; butter pickles.
+        </p>
+<button class="w-full h-11 flex items-center justify-center border border-primary/40 rounded-lg font-label text-sm font-bold text-primary hover:bg-primary/10 transition-colors uppercase tracking-widest">
+          Details
+        </button>
+</article>
+</div>
+<!-- Extra Spacing for FAB/Nav -->
+<div class="h-24"></div>
+</main>
+<!-- Shared BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-stone-950/60 backdrop-blur-xl z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-stone-500 font-sans uppercase tracking-widest text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+      Home
+    </a>
+<a class="flex flex-col items-center justify-center text-amber-400 bg-amber-900/20 rounded-full px-4 py-1 font-sans uppercase tracking-widest text-[10px] animate-pulse-slow" href="#">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+      Menu
+    </a>
+<a class="flex flex-col items-center justify-center text-stone-500 font-sans uppercase tracking-widest text-[10px]" href="#">
+<span class="material-symbols-outlined mb-1">event_available</span>
+      Reserve
+    </a>
+</nav>
+<!-- Ambient Light Effect -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 w-64 h-64 bg-primary-container/10 blur-[100px] pointer-events-none z-0"></div>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#1e1b15",
+              "on-primary": "#422c00",
+              "surface-container-lowest": "#0d0e11",
+              "surface-container-highest": "#343538",
+              "primary": "#f0bf6b",
+              "tertiary-container": "#b0aaa1",
+              "inverse-on-surface": "#2f3033",
+              "surface-bright": "#38393c",
+              "secondary-container": "#45464e",
+              "primary-container": "#d1a352",
+              "on-surface-variant": "#d2c4b2",
+              "primary-fixed": "#ffdeaa",
+              "surface-container-high": "#292a2d",
+              "background": "#121316",
+              "surface-tint": "#f0bf6b",
+              "tertiary-fixed": "#e9e1d7",
+              "tertiary": "#cdc5bc",
+              "on-secondary": "#2e3037",
+              "surface-container": "#1e2022",
+              "on-secondary-container": "#b4b4bd",
+              "secondary": "#c5c6ce",
+              "secondary-fixed": "#e2e2eb",
+              "inverse-primary": "#7c5809",
+              "error": "#ffb4ab",
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#e3e2e5",
+              "on-error": "#690005",
+              "surface-container-low": "#1a1c1e",
+              "tertiary-fixed-dim": "#cdc5bc",
+              "on-primary-fixed": "#271900",
+              "on-secondary-fixed": "#191b22",
+              "on-secondary-fixed-variant": "#45464e",
+              "on-tertiary": "#343029",
+              "on-background": "#e3e2e5",
+              "error-container": "#93000a",
+              "primary-fixed-dim": "#f0bf6b",
+              "secondary-fixed-dim": "#c5c6ce",
+              "on-tertiary-fixed-variant": "#4a463f",
+              "surface-dim": "#121316",
+              "on-primary-fixed-variant": "#5f4100",
+              "outline-variant": "#4f4538",
+              "on-surface": "#e3e2e5",
+              "on-primary-container": "#553a00",
+              "outline": "#9b8f7f",
+              "surface": "#121316",
+              "surface-variant": "#343538",
+              "on-tertiary-container": "#433f38"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "serif": ["Playfair Display"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col max-w-[390px] mx-auto overflow-x-hidden">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-stone-950/60 backdrop-blur-md flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-400">menu</span>
+<h1 class="text-2xl font-serif text-amber-200 drop-shadow-[0_0_8px_rgba(209,163,82,0.4)] italic tracking-tight">Westley's</h1>
+</div>
+<span class="material-symbols-outlined text-amber-400">fiber_manual_record</span>
+</header>
+<main class="flex-1 pt-24 pb-32">
+<!-- Section Header -->
+<section class="px-8 mb-12">
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-primary mb-2 block">Guest Experiences</span>
+<h2 class="text-4xl font-serif text-on-surface leading-tight">The Words of our Patrons</h2>
+<div class="w-12 h-[1px] bg-primary-container mt-4 opacity-50"></div>
+</section>
+<!-- Reviews Carousel (Mobile Specific 390px) -->
+<section class="relative">
+<!-- Asymmetric Glow behind card -->
+<div class="absolute -top-10 -left-10 w-48 h-48 bg-primary-container/10 blur-[60px] rounded-full pointer-events-none"></div>
+<div class="overflow-x-auto no-scrollbar snap-x snap-mandatory flex gap-6 px-8 py-4">
+<!-- Review Card 1 -->
+<div class="min-w-full snap-center group">
+<div class="bg-surface-variant/40 backdrop-blur-xl rounded-xl p-8 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
+<!-- Subtle Texture Overlay -->
+<div class="absolute inset-0 bg-white/[0.02] pointer-events-none"></div>
+<span class="material-symbols-outlined text-primary/30 text-5xl self-start" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-xl font-serif italic leading-relaxed text-on-surface">
+                            "The dry-aged ribeye was a revelation. It's rare to find a space that balances cinematic ambiance with such culinary precision."
+                        </p>
+<div class="flex items-center gap-4 border-t border-outline-variant/20 pt-6">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover grayscale brightness-90" data-alt="Close-up portrait of a sophisticated man in a dark suit with soft atmospheric restaurant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Z5HZY77WfPz-exEphuVSzZ6clqxlYZ-xsRvQfxk-eYYkUkxsbV9Gpb6XklpnznoGMwgH9y8DEItFKNlDHjeO1rBLySaqdhR2uqYcxjz032fUlXDTWB-vLA_2LZdE6e1a6nXz2DcJoU9KKv6Mo2gE2kMWSpeE9smZklVIYHo0RhLYvdU0lxgFNQebkR54SLkSzGgz1neB0lXTFo9BFMDFsbsnGvm6pmkhOg9TnsislixwqO5fAqJdzbvJlv2xXYKaLfdek8rvOxc"/>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Julian Thorne</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary/60">Food Critic, The Ledger</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="min-w-full snap-center group">
+<div class="bg-surface-variant/40 backdrop-blur-xl rounded-xl p-8 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
+<div class="absolute inset-0 bg-white/[0.02] pointer-events-none"></div>
+<span class="material-symbols-outlined text-primary/30 text-5xl self-start" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-xl font-serif italic leading-relaxed text-on-surface">
+                            "A sanctuary of taste. Westley's doesn't just serve dinner; they curate an evening that feels like a scene from a classic film."
+                        </p>
+<div class="flex items-center gap-4 border-t border-outline-variant/20 pt-6">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover grayscale brightness-90" data-alt="Elegant woman smiling subtly in a dimly lit evening setting with warm golden highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwcOjV5Vs3x8vtvxWl_qbi4QvJoUFg5-RwQae_7ciY_sxH2aB8-ND6TYsgmZSIVKskb2KREJNdSHmeH8CnrQP9FCImIC-_lBLwmU5-_zFMjs5T7J8eY6oTWW7ejFsA5g0boym8NmPYwzAvUQ7QamMcfrUfv_KtlwI4l5P4yh7SD-gXIuyayEfO0Om1CnxSfBHXs2ZIgthBiKldtuaexZmfI3AsUHK9nCqpWnKIlMlddkLNnfJ8VKr_nZqPHJ9id-fFgQdL1rlhS_4"/>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Elena Rossi</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary/60">Architectural Digest</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="min-w-full snap-center group">
+<div class="bg-surface-variant/40 backdrop-blur-xl rounded-xl p-8 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
+<div class="absolute inset-0 bg-white/[0.02] pointer-events-none"></div>
+<span class="material-symbols-outlined text-primary/30 text-5xl self-start" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-xl font-serif italic leading-relaxed text-on-surface">
+                            "From the smoked cocktails to the seamless service, every detail whispered luxury. Truly a gem in the heart of the city."
+                        </p>
+<div class="flex items-center gap-4 border-t border-outline-variant/20 pt-6">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover grayscale brightness-90" data-alt="Professional man laughing in a high-end lounge environment with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-gh0D1YqWAXCrvADDGw_izPnOgOK0fYxAUsFGtWYd2Hq7C7DOM74CmokcqMMOH7UaurKdB06ySeC2y6u_MYmUJ7jJ8lvxyy8dbsZJgrRkzNmPJQqL9u7aSZXSiBIV1hWucF3SR1uyiLtnyq8hyGAILrQAcwRA0KSJcP_tOmTcfq3pVEW7skttGEYy7Xxis2dOFi6htBhTnLWjxmvlB4e1YqxCbR7Okkg_QtpE_PWFgW-l0m4--N1dcZRxn00n3anC82kiRDwl_1o"/>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-on-surface">Marcus Chen</h4>
+<p class="text-[10px] font-label uppercase tracking-widest text-primary/60">Lifestyle Influencer</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Indicators -->
+<div class="flex justify-center items-center gap-3 mt-8">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(240,191,107,0.6)]"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></div>
+</div>
+</section>
+<!-- Signature CTA for Mobile -->
+<section class="mt-16 px-8 text-center">
+<button class="w-full h-14 bg-primary text-on-primary font-label uppercase tracking-widest text-xs font-bold rounded shadow-xl flex items-center justify-center gap-3 hover:opacity-90 transition-all">
+                Submit Your Story
+                <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</button>
+<p class="mt-4 text-[10px] text-stone-500 italic">Join our community of epicureans.</p>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full pt-16 pb-32 bg-stone-950 flex flex-col space-y-6 px-8 w-full opacity-80">
+<h3 class="text-lg font-serif text-stone-200">Westley's</h3>
+<div class="flex flex-col gap-3 font-sans text-xs leading-relaxed tracking-wide text-stone-500">
+<span class="hover:underline decoration-amber-900">Ground Floor, Kaliyath Building, Kochi</span>
+<span class="hover:underline decoration-amber-900">+91 62824 18166</span>
+<div class="flex gap-4 mt-2">
+<span class="text-amber-400 hover:underline decoration-amber-900">Instagram</span>
+<span class="text-amber-400 hover:underline decoration-amber-900">Facebook</span>
+</div>
+</div>
+<p class="text-stone-600 text-[10px] border-t border-stone-900 pt-6">© 2024 Westley's Restocafe. 10 AM - 11 PM</p>
+</footer>
+<!-- BottomNavBar from JSON -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-stone-950/60 backdrop-blur-xl z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-stone-500">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-sans uppercase tracking-widest text-[10px]">Home</span>
+</div>
+<!-- Active based on context: "Menu" could be related to exploring reviews -->
+<div class="flex flex-col items-center justify-center text-amber-400 bg-amber-900/20 rounded-full px-4 py-1">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="font-sans uppercase tracking-widest text-[10px]">Menu</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500">
+<span class="material-symbols-outlined mb-1">event_available</span>
+<span class="font-sans uppercase tracking-widest text-[10px]">Reserve</span>
+</div>
+</nav>
+</body></html>
