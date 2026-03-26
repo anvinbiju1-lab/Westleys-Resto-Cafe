@@ -60,7 +60,7 @@ export default function HeroBackground() {
           src="/hero_phone.jpeg"
           alt="Westley's Restocafe interior"
           fill
-          className="object-contain object-top md:hidden max-h-[85vh]"
+          className="object-cover object-top md:hidden"
           priority
           quality={90}
         />
