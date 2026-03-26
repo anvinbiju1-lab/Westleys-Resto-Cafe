@@ -55,24 +55,27 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
 
   return (
     <div className="flex flex-col gap-10">
-      {/* Pill Tabs */}
-      <div className="flex items-center gap-2 md:gap-3 overflow-x-auto no-scrollbar pb-2">
+      {/* Pill Tabs — horizontal scroll, 44px min height */}
+      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 -mx-1 px-1">
         {categories.map((cat) => {
           const isActive = activeTab === cat.id;
           return (
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className="relative flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-montserrat font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden active:scale-95"
-              style={isActive ? {
-                background: "linear-gradient(135deg, #D1A352 0%, #B8893A 100%)",
-                color: "#050608",
-                boxShadow: "0 0 20px rgba(209,163,82,0.3), 0 4px 12px rgba(0,0,0,0.3)",
-                transform: "scale(1.04)",
-              } : {
-                background: "rgba(17,19,25,0.8)",
-                color: "#A29A8D",
-                border: "1px solid #27272F",
+              className="relative flex-shrink-0 flex items-center gap-2 px-4 rounded-full text-xs font-montserrat font-bold uppercase tracking-widest transition-all duration-300 overflow-hidden active:scale-95"
+              style={{
+                minHeight: "44px",
+                ...(isActive ? {
+                  background: "linear-gradient(135deg, #D1A352 0%, #B8893A 100%)",
+                  color: "#050608",
+                  boxShadow: "0 0 24px rgba(209,163,82,0.35), 0 4px 12px rgba(0,0,0,0.3)",
+                  transform: "scale(1.04)",
+                } : {
+                  background: "rgba(17,19,25,0.8)",
+                  color: "#A29A8D",
+                  border: "1px solid #27272F",
+                })
               }}
             >
               <span className="text-sm" aria-hidden="true">{ICONS[cat.name] || "🍽"}</span>
@@ -95,7 +98,7 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
                 exit={{ opacity: 0, scale: 0.9, y: -20 }}
                 transition={{ duration: 0.5, delay: isInView ? i * 0.08 : 0, ease: [0.25, 1, 0.5, 1] }}
                 onClick={() => setSelectedItem(item)}
-                className="group cursor-pointer relative flex flex-col gap-4 p-6 rounded-2xl border border-[#27272F] overflow-hidden"
+                className="group cursor-pointer relative flex flex-col gap-4 p-5 sm:p-6 rounded-2xl border border-[#27272F] overflow-hidden active:scale-[0.98] transition-transform"
                 style={{
                   background: "linear-gradient(135deg, #111319 0%, #151820 100%)",
                   boxShadow: "0 4px 24px rgba(0,0,0,0.35)",

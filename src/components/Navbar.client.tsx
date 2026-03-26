@@ -137,24 +137,36 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full glass text-[#F4ECE2] transition-all hover:border-[#D1A352]/30"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {isOpen ? (
-                <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                  <X size={20} />
-                </motion.span>
-              ) : (
-                <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                  <Menu size={20} />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </button>
+          {/* Mobile: Open/Closed badge + Hamburger */}
+          <div className="lg:hidden flex items-center gap-3">
+            {/* Status dot — visible on mobile */}
+            <div className="flex items-center gap-1.5">
+              <span
+                className={`w-2 h-2 rounded-full shrink-0 ${status === "open" ? "bg-emerald-400" : "bg-rose-500"}`}
+                style={status === "open" ? { boxShadow: "0 0 6px rgba(52,211,153,0.8)" } : {}}
+              />
+              <span className="text-[9px] font-montserrat font-semibold uppercase tracking-[0.15em] text-[#A29A8D] hidden xs:block">
+                {status === "open" ? "Open" : "Closed"}
+              </span>
+            </div>
+            <button
+              className="w-11 h-11 flex items-center justify-center rounded-full glass text-[#F4ECE2] transition-all active:scale-90"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {isOpen ? (
+                  <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                    <X size={20} />
+                  </motion.span>
+                ) : (
+                  <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                    <Menu size={20} />
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -182,9 +194,13 @@ export default function Navbar() {
               style={{ background: "rgba(10, 12, 16, 0.98)", backdropFilter: "blur(24px)", borderLeft: "1px solid rgba(39,39,47,0.8)" }}
             >
               {/* Drawer Header */}
-              <div className="flex items-center justify-end p-6 border-b border-[#27272F]/60">
+              <div className="flex items-center justify-between px-6 py-5 border-b border-[#27272F]/60">
+                <div className="flex flex-col">
+                  <span className="font-playfair text-xl font-bold text-[#F4ECE2]">{"Westley's"}</span>
+                  <span className="text-[9px] font-montserrat uppercase tracking-[0.25em] text-[#D1A352]">Restocafe</span>
+                </div>
                 <button
-                  className="w-9 h-9 flex items-center justify-center rounded-full glass text-[#A29A8D] hover:text-[#F4ECE2] transition-colors"
+                  className="w-11 h-11 flex items-center justify-center rounded-full glass text-[#A29A8D] hover:text-[#F4ECE2] transition-colors active:scale-90"
                   onClick={() => setIsOpen(false)}
                 >
                   <X size={18} />
@@ -201,7 +217,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.08 + 0.15, duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="flex items-center justify-between px-4 py-4 rounded-xl text-[#A29A8D] hover:text-[#F4ECE2] hover:bg-white/5 transition-all group border border-transparent hover:border-[#27272F]"
+                    className="flex items-center justify-between px-4 py-5 rounded-2xl text-[#A29A8D] hover:text-[#F4ECE2] hover:bg-white/5 active:bg-white/10 transition-all group border border-transparent hover:border-[#27272F] min-h-[64px]"
                   >
                     <span className="text-2xl font-playfair font-bold">{link.name}</span>
                     <ChevronRight size={16} className="text-[#D1A352] opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />

@@ -64,14 +64,15 @@ export default function ContactSection() {
               <div className="flex flex-col gap-3">
                 <a
                   href="tel:+916282418166"
-                  className="btn-amber w-full py-4 text-xs rounded-xl text-center flex items-center justify-center gap-2"
-                  style={{ color: "#050608" }}
+                  className="btn-amber w-full text-xs rounded-xl text-center flex items-center justify-center gap-2 active:scale-95"
+                  style={{ color: "#050608", minHeight: "56px" }}
                 >
                   <Phone size={14} /> +91 62824 18166
                 </a>
                 <a
                   href="tel:+917356111146"
-                  className="btn-glass w-full py-4 text-xs rounded-xl text-center flex items-center justify-center gap-2"
+                  className="btn-glass w-full text-xs rounded-xl text-center flex items-center justify-center gap-2 active:scale-95"
+                  style={{ minHeight: "56px" }}
                 >
                   <Phone size={14} /> +91 73561 11146
                 </a>

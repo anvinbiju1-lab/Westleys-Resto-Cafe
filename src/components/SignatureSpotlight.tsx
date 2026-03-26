@@ -79,9 +79,9 @@ export default function SignatureSpotlight() {
                 boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
               }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[360px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 min-h-[auto] md:min-h-[360px]">
                 {/* Text side */}
-                <div className={`flex flex-col justify-center gap-6 p-8 md:p-12 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className={`flex flex-col justify-center gap-5 p-6 md:p-12 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                   <div className="flex flex-col gap-2">
                     <span className="flex items-center gap-1.5 text-[10px] font-montserrat font-bold uppercase tracking-[0.3em] text-[#D1A352]">
                       <Sparkles size={9} /> {dish.tagline}
@@ -107,8 +107,8 @@ export default function SignatureSpotlight() {
                   </div>
                 </div>
 
-                {/* Image side */}
-                <div className={`relative overflow-hidden min-h-[280px] md:min-h-[360px] ${i % 2 === 1 ? "md:order-1" : ""}`}>
+                {/* Image side — shows first on mobile */}
+                <div className={`relative overflow-hidden min-h-[220px] md:min-h-[360px] md:order-none ${i % 2 === 1 ? "md:order-1" : ""} order-first`}>
                   <Image
                     src={dish.image}
                     alt={dish.name}

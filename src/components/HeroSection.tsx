@@ -1,49 +1,52 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Star, Clock, Phone, ChevronDown } from "lucide-react";
-import Link from "next/link";
+import { Star, Clock, Phone, ChevronDown, IndianRupee } from "lucide-react";
 import HeroBackground from "./HeroBackground.client";
 
-const easeOut = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number];
-
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  hidden: { opacity: 0, y: 32, scale: 0.96 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] as [number, number, number, number] },
+    transition: { duration: 0.85, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] as [number, number, number, number] },
   }),
 };
 
+function scrollTo(id: string) {
+  const el = document.querySelector(id);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 80;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
       <HeroBackground />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 pt-28 pb-24 text-center">
-        {/* Eyebrow */}
-        <motion.div variants={fadeUp} custom={0} initial="hidden" animate="visible">
-          <span className="section-label justify-center mb-6 inline-flex">
+      {/* Content stack — mobile first, centered */}
+      <div className="relative z-10 w-full max-w-[480px] mx-auto px-5 pt-32 pb-28 flex flex-col items-center text-center gap-0">
+
+        {/* Eyebrow label */}
+        <motion.div variants={fadeUp} custom={0} initial="hidden" animate="visible" className="mb-5">
+          <span className="section-label justify-center">
             Mamangalam · Kochi
           </span>
         </motion.div>
 
-        {/* H1 */}
+        {/* H1 — big and cinematic */}
         <motion.h1
           variants={fadeUp}
           custom={1}
           initial="hidden"
           animate="visible"
-          className="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.08] tracking-[-0.02em] text-[#F4ECE2] mb-6 max-w-4xl mx-auto"
+          className="font-playfair text-[2.85rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-[-0.02em] text-[#F4ECE2] mb-5 w-full"
         >
-          Modern Dining.{" "}
-          <br className="hidden sm:block" />
-          <span className="italic text-[#D1A352] text-glow-amber">
-            Timeless Flavor.
-          </span>
+          Modern Dining.
+          <br />
+          <span className="italic text-[#D1A352] text-glow-amber">Timeless Flavor.</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -52,61 +55,55 @@ export default function HeroSection() {
           custom={2}
           initial="hidden"
           animate="visible"
-          className="text-[#A29A8D] text-lg md:text-xl font-inter leading-relaxed max-w-2xl mx-auto mb-10"
+          className="text-[#A29A8D] text-base sm:text-lg font-inter leading-relaxed max-w-sm mx-auto mb-8"
         >
-          An intimate resto-café in Kochi, serving handcrafted burgers,
-          steaks, and plates built for conversation.
+          Handcrafted burgers, steaks, and plates built for conversation — in the heart of Kochi.
         </motion.p>
 
-        {/* Info Badge Pills */}
+        {/* Badge pills */}
         <motion.div
           variants={fadeUp}
           custom={3}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap items-center justify-center gap-3 mb-12"
+          className="flex flex-wrap items-center justify-center gap-2 mb-10"
         >
           <div className="pill">
-            <Star size={13} className="text-[#D1A352] fill-[#D1A352]" />
+            <Star size={12} className="text-[#D1A352] fill-[#D1A352]" />
             <span>4.5 / 5 · Top-Rated</span>
           </div>
           <div className="pill">
-            <Clock size={12} className="text-[#D1A352]" />
-            <span>Open · Closes 11:00 PM</span>
+            <IndianRupee size={11} className="text-[#D1A352]" />
+            <span>600–800 for two</span>
+          </div>
+          <div className="pill">
+            <Clock size={11} className="text-[#D1A352]" />
+            <span>Open · 11:00 PM</span>
           </div>
         </motion.div>
 
-        {/* CTAs */}
+        {/* CTAs — stacked on mobile, 56px tall, full width */}
         <motion.div
           variants={fadeUp}
           custom={4}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-stretch justify-center gap-3 w-full max-w-sm"
         >
           <a
             href="#menu"
-            onClick={(e) => {
-              e.preventDefault();
-              const target = document.querySelector("#menu");
-              if (target) {
-                const offset = 80;
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = target.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
-              }
-            }}
-            className="btn-amber px-8 py-4 text-sm rounded-full w-full sm:w-auto text-center"
-            style={{ color: "#050608", display: "block" }}
+            onClick={(e) => { e.preventDefault(); scrollTo("#menu"); }}
+            className="btn-amber text-sm font-montserrat font-bold uppercase tracking-[0.15em] w-full flex items-center justify-center active:scale-95"
+            style={{ color: "#050608", minHeight: "56px", borderRadius: "999px" }}
           >
             View Menu
           </a>
           <a
             href="tel:+916282418166"
-            className="btn-glass px-8 py-4 text-sm rounded-full w-full sm:w-auto flex items-center justify-center gap-2"
+            className="btn-glass text-sm font-montserrat font-bold uppercase tracking-[0.12em] w-full flex items-center justify-center gap-2 active:scale-95"
+            style={{ minHeight: "56px", borderRadius: "999px" }}
           >
-            <Phone size={16} />
+            <Phone size={15} />
             Call to Reserve
           </a>
         </motion.div>
@@ -116,17 +113,17 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        transition={{ delay: 2.0, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10 pointer-events-none"
       >
-        <span className="text-[10px] font-montserrat uppercase tracking-[0.25em] text-[#A29A8D]/60">
+        <span className="text-[9px] font-montserrat uppercase tracking-[0.3em] text-[#A29A8D]/50">
           Scroll
         </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={18} className="text-[#D1A352]/60" />
+          <ChevronDown size={16} className="text-[#D1A352]/50" />
         </motion.div>
       </motion.div>
     </section>
