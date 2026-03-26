@@ -8,6 +8,7 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const AMBIANCE_IMAGES = [
+  "/hero_phone.jpeg",
   "/ambiance/a1.webp",
   "/ambiance/a2.webp",
   "/ambiance/a3.webp",
