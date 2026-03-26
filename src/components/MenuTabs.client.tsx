@@ -67,9 +67,10 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
                 onClick={() => setActiveTab(cat.id)}
                 className={`flex-shrink-0 px-6 h-full flex items-center justify-center rounded-full font-label text-[11px] font-bold uppercase tracking-widest transition-all active:scale-95 ${
                   isActive 
-                    ? "bg-primary-container text-on-primary-container shadow-[0_0_15px_rgba(209,163,82,0.3)] border border-primary/20" 
+                    ? "shadow-[0_0_15px_rgba(209,163,82,0.3)]" 
                     : "bg-surface-container-low text-on-surface-variant hover:text-primary border border-white/5"
                 }`}
+                style={isActive ? { background: "#d1a352", color: "#422c00", border: "1px solid rgba(240,191,107,0.2)" } : {}}
               >
                 <span className="mr-2 text-sm" aria-hidden="true">{ICONS[cat.name] || "🍽"}</span>
                 {cat.name}
@@ -114,11 +115,11 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
 
                   <div className="flex justify-between items-start mb-6 gap-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold font-body text-on-surface leading-tight transition-colors group-hover:text-primary pr-16">
+                      <h3 className="text-xl font-bold font-body text-on-surface leading-tight transition-colors group-hover:text-[#f0bf6b] pr-16">
                         {item.name}
                       </h3>
                     </div>
-                    <div className="text-2xl font-serif font-bold text-primary italic">
+                    <div className="text-2xl font-serif font-bold italic" style={{ color: "#f0bf6b" }}>
                       {currency}{item.price}
                     </div>
                   </div>
@@ -127,8 +128,13 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
                     {item.description}
                   </p>
 
-                  <button className="w-full h-11 flex items-center justify-center border border-primary/40 rounded-full font-label text-[11px] font-bold text-primary hover:bg-primary/10 transition-all uppercase tracking-widest active:scale-95">
-                    View Details
+                  <button 
+                    className="w-full h-11 flex items-center justify-center rounded-full font-label text-[11px] font-bold uppercase tracking-widest transition-all active:scale-95"
+                    style={{ border: "1px solid rgba(240,191,107,0.4)", color: "#f0bf6b" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(240,191,107,0.1)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                  >
+                    Details
                   </button>
                 </div>
               </motion.article>
@@ -189,7 +195,7 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
                   <h2 className="font-playfair text-3xl md:text-4xl font-bold text-on-surface leading-tight">
                     {selectedItem.name}
                   </h2>
-                  <span className="font-playfair text-2xl font-bold text-primary flex-shrink-0 italic">
+                  <span className="font-playfair text-2xl font-bold flex-shrink-0 italic" style={{ color: "#f0bf6b" }}>
                     {currency}{selectedItem.price}
                   </span>
                 </div>
@@ -201,7 +207,7 @@ export default function MenuTabs({ categories, currency = "₹" }: MenuTabsProps
                 <div className="flex flex-col gap-3 mt-4">
                   <button
                     onClick={() => setIsChooserOpen(true)}
-                    className="w-full h-14 bg-primary text-on-primary rounded-full font-label text-[11px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 active:scale-95 transition-all shadow-xl shadow-primary/10"
+                    className="btn-amber w-full h-14 rounded-full font-label text-[11px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 active:scale-95 transition-all"
                   >
                     Order Online <ExternalLink size={16} />
                   </button>

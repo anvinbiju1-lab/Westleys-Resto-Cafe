@@ -282,12 +282,12 @@ export default function SignatureSpotlight() {
                   {dish.tagline}
                 </p>
 
-                <p className="text-[#A29A8D] text-sm font-inter leading-relaxed line-clamp-2">
+                <p className="text-on-surface-variant text-sm font-inter leading-relaxed line-clamp-2">
                   {dish.microcopy}
                 </p>
 
-                <div className="flex items-center justify-between mt-2 pt-4 border-t border-[#27272F]">
-                  <span className="text-[10px] font-bold text-[#666] uppercase tracking-widest">
+                <div className="flex items-center justify-between mt-2 pt-4 border-t border-white/5">
+                  <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">
                     {dish.category}
                   </span>
                 </div>

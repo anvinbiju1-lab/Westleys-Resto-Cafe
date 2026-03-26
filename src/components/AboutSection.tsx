@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star, ShieldCheck, MapPin, Heart } from "lucide-react";
+import AmbianceSlideshow from "./AmbianceSlideshow.client";
 
 const STATS = [
   { label: "Multi-Cuisine", sub: "Global flavors, local heart", icon: Star },
@@ -87,7 +88,7 @@ export default function AboutSection() {
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                       style={{ background: "rgba(209,163,82,0.1)" }}>
-                      <stat.icon size={18} className="text-primary" />
+                      <stat.icon size={18} style={{ color: "#f0bf6b" }} />
                     </div>
                     <div>
                       <p className="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface mb-0.5">{stat.label}</p>
@@ -110,15 +111,13 @@ export default function AboutSection() {
               <div className="absolute inset-0 z-0 opacity-[0.03]" 
                 style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxq6HpcRDCycRdQo9W6ohwG0md2SsmqSe5gbCK9_3EGfi4cvm0qLCc1W2LnJt9KhQLoe1XzHlB45rRFQ9cmO4Q-CT02SyaexnkpZrdR21_BB7zUuKNNBdTt3Ja-ZZf7d_5x6VjOGD_KXpJRbLt8TkLh2t58tZAn74qrrf1qEisC4CiqzdlPfoIZPdxw3h6sDkmjU9Qf6RpK6Y20YxFE4_A_GVSxgpe31UODrqHbQPr53KTInRaYUVQnBvMSQf3zXMpP87HO3AJvfY')" }} />
 
+
               {/* Snapshot image */}
               <div className="relative h-72 md:h-80 overflow-hidden z-10">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] hover:scale-110 grayscale-[0.2] hover:grayscale-0"
-                  style={{ backgroundImage: "url('/ambiance/a1.webp')" }}
-                />
-                <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 0%, #121316 100%)" }} />
+                <AmbianceSlideshow />
                 <div className="absolute top-5 right-5 z-20">
-                  <span className="px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-widest bg-primary/20 text-primary border border-primary/30 backdrop-blur-md">
+                  <span className="px-3 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-widest backdrop-blur-md"
+                    style={{ background: "rgba(240,191,107,0.2)", color: "#f0bf6b", border: "1px solid rgba(240,191,107,0.3)" }}>
                     Ambiance Snapshot
                   </span>
                 </div>
@@ -133,7 +132,8 @@ export default function AboutSection() {
                 <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                   {["Multi-Cuisine", "Quiet & Clean", "Est. Kochi", "Modern Space"].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 shadow-[0_0_6px_rgba(209,163,82,0.6)]" />
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" 
+                        style={{ background: "#f0bf6b", boxShadow: "0 0 6px rgba(209,163,82,0.6)" }} />
                       <span className="text-[11px] text-on-surface-variant font-label uppercase tracking-widest">{item}</span>
                     </div>
                   ))}

@@ -49,7 +49,7 @@ export default function AmenitiesSection() {
                 className="w-12 h-12 flex items-center justify-center rounded-full flex-shrink-0 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg shadow-black/20"
                 style={{ background: "#292a2d", border: "1px solid rgba(240,191,107,0.1)" }}
               >
-                <amenity.icon size={20} className="text-primary" />
+                <amenity.icon size={20} style={{ color: "#f0bf6b" }} />
               </div>
               <div className="flex flex-col gap-1.5 pt-1">
                 <h3 className="font-label text-[11px] font-bold uppercase tracking-widest text-on-surface">
